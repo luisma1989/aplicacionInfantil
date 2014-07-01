@@ -1,0 +1,42 @@
+<div class="row pagina-registro">
+  <div class="col-sm-6 contenedor">
+    <div class="jumbotron">
+      <h1>Nombre: <span>{{ currentUser.name }}</span></h1>
+      <h1>Apellidos: <span>{{ currentUser.apellidos }}</span></h1>
+      <h1>Edad: <span>{{ currentUser.edad }}</span></h1>
+    </div>
+    <h2><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
+  </div>
+  
+  <div class="col-sm-6 contenedor">
+    <h1>Cambia tu contraseña</h1>
+    <form class="form contacta" name="form" ng-submit="changePassword(form)" novalidate>
+
+      <div class="form-group">
+        <label>Actual contraseña</label>
+
+        <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
+               mongoose-error/>
+        <p class="help-block" ng-show="form.password.$error.mongoose">
+            {{ errors.other }}
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label>Nueva contraseña</label>
+
+        <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
+               ng-minlength="3"
+               required/>
+        <p class="help-block"
+           ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
+          La contraseña debe tener al menos tres caracteres.
+        </p>
+      </div>
+
+      <p class="help-block"> {{ message }} </p>
+
+      <button class="btn btn-lg btn-primary" type="submit">Guardar</button>
+    </form>
+  </div>
+</div>

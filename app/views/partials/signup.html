@@ -1,0 +1,99 @@
+
+<div class="row pagina-registro">
+
+  <div class="col-sm-6 contenedor">
+    <h1>Registrate <span>en nuestra aplicacion</span></h1>
+    <div class="ch-grid">
+      <li>
+        <a href="/login">
+          <div class="ch-item">       
+            <div class="ch-info">
+              <div class="ch-info-front color-front-1">
+                <h3>Entra en tu usuario</h3>
+              </div>
+              <div class="ch-info-back color-back-1">
+                <p>Si ya creaste una cuente, accede a ella desde aquí!</p>
+              </div>  
+            </div>
+          </div>
+        </a>
+      </li>
+    </div>
+
+    <h2><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
+  </div>
+
+  <div class="col-sm-6 contenedor">
+    <form class="form contacta" name="form" ng-submit="register(form)" novalidate>
+
+      <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                          'has-error': form.name.$invalid && submitted }">
+        <label>Name</label>
+
+        <input type="text" name="name" class="form-control" ng-model="user.name"
+               required/>
+        <p class="help-block" ng-show="form.name.$error.required && submitted">
+          El nombre es necesario.
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.apellidos.$valid && submitted,
+                                          'has-error': form.apellidos.$invalid && submitted }">
+        <label>Apellidos</label>
+
+        <input type="text" name="apellidos" class="form-control" ng-model="user.apellidos"
+               required/>
+        <p class="help-block" ng-show="form.apellidos.$error.required && submitted">
+          Los apellidos son obligatorios
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-success': form.edad.$valid && submitted,
+                                          'has-error': form.edad.$invalid && submitted }">
+        <label>Edad</label>
+
+        <input type="text" name="edad" class="form-control" ng-model="user.edad"
+               required/>
+        <p class="help-block" ng-show="form.edad.$error.required && submitted">
+          La edad es necesaria.
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                          'has-error': form.email.$invalid && submitted }">
+        <label>Email</label>
+
+        <input type="email" name="email" class="form-control" ng-model="user.email"
+               required
+               mongoose-error/>
+        <p class="help-block" ng-show="form.email.$error.email && submitted">
+          Este email no es correcto.
+        </p>
+        <p class="help-block" ng-show="form.email.$error.required && submitted">
+          ¿Cúal es tu email?
+        </p>
+        <p class="help-block" ng-show="form.email.$error.mongoose">
+          {{ errors.email }}
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                          'has-error': form.password.$invalid && submitted }">
+        <label>Contraseña</label>
+
+        <input type="password" name="password" class="form-control" ng-model="user.password"
+               ng-minlength="3"
+               required
+               mongoose-error/>
+        <p class="help-block"
+           ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+          La contraseña debe tener al menos tres caracteres.
+        </p>
+        <p class="help-block" ng-show="form.password.$error.mongoose">
+          {{ errors.password }}
+        </p>
+      </div>
+
+      <button class="btn btn-lg btn-primary" type="submit">Registrate</button>
+    </form>
+  </div>
+</div>

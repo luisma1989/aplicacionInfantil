@@ -1,0 +1,18 @@
+{
+	"datos":
+	{
+		"paginaPrincipal":
+		{
+			"menuLateral":{
+				"link1":"El juego de la Ruleta",
+				"link2":"El juego 2",
+				"link3":"El juego 3",
+				"link4":"El link 4"
+			},
+			"titulo":"hola"
+		},
+		"paginaLogin":{
+			"titulo":"hola"
+		}
+	}
+}

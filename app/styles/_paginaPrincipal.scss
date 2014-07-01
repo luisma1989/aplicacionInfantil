@@ -1,0 +1,30 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+.nombreUsuario {
+  font: 100 4em/1em Lato;
+  margin: 0;
+  text-transform: uppercase;
+  position: fixed;
+  top: 80%;
+  right: 0;
+  background-color: white;
+  padding: 20px 50px;
+  opacity: 0.5;
+}
+
+.contacta{
+  label{
+    color: #21a97e;
+    font: 400 1.2em/1em Lato;
+  }
+  button{
+    font: 300 2em/1em Lato;
+    border-radius: 0;
+    background-color: #21a97e;
+  }
+}

@@ -1,0 +1,357 @@
+<div id="wrapper">
+
+  <h1 class="nombreUsuario">{{currentUser.name}}</h1>
+  
+  <!-- Menu principal -->
+  <ul class="ch-grid">
+    <li ng-hide="currentUser" ng-class="{active: isActive('/login')}">
+      <a href="/login">
+        <div class="ch-item">       
+          <div class="ch-info">
+            <div class="ch-info-front color-front-1">
+              <h3>Login</h3>
+            </div>
+            <div class="ch-info-back color-back-1">
+              <p>Accede con tu usuario y contraseña</p>
+            </div>  
+          </div>
+        </div>
+      </a>
+    </li>
+    <li ng-hide="currentUser" ng-class="{active: isActive('/signup')}">
+      <a href="/signup">
+        <div class="ch-item">       
+          <div class="ch-info">
+            <div class="ch-info-front color-front-2">
+              <h3>Crea tu cuenta</h3>
+            </div>
+            <div class="ch-info-back color-back-2">
+              <p>Crea tu propia cuenta de usuario</p>
+            </div>  
+          </div>
+        </div>
+      </a>
+    </li>
+    <li ng-show="currentUser" ng-class="{active: isActive('/usuario')}">
+      <a href="/usuario">
+        <div class="ch-item">
+          <div class="ch-info">
+            <div class="ch-info-front color-front-2">
+              <h3>Tu usuario</h3>
+            </div>
+            <div class="ch-info-back color-back-2">
+              <p>Modifica los datos de tu usuario</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="cuartaSeccion" href="#cuartaSeccion">
+        <div class="ch-item">
+          <div class="ch-info">
+              <div class="ch-info-front color-front-3">
+                <h3>Quiénes somos</h3>
+              </div>
+              <div class="ch-info-back color-back-3">
+                <p>Si quieres saber quienes somos</p>
+              </div>
+          </div>
+          </div>
+        </a>
+    </li>
+    
+    <li class="quintaSeccion">
+      <a class="quintaSeccion" href="#quintaSeccion">
+        <div class="ch-item">
+          <div class="ch-info">
+            <div class="ch-info-front color-front-4">
+              <h3>Contacta con nosotros</h3>
+            </div>
+            <div class="ch-info-back color-back-4">
+              <p>Para cualquier duda o consulta</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li ng-show="currentUser" ng-class="{active: isActive('/logout')}">
+      <a href="" ng-click="logout()">
+        <div class="ch-item">
+          <div class="ch-info">
+            <div class="ch-info-front color-front-5">
+              <h3>Cierra tu sesión</h3>
+            </div>
+            <div class="ch-info-back color-back-5">
+              <p>Pulsa aquí para cerrar la sesión</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>     
+  <!-- Fin Menu Principal -->
+
+  <!-- Menu circulos derecha -->
+  <nav id="primary">
+    <ul>
+      <li>
+        <h1 style="display: none;">Primer juego</h1>
+        <a class="primeraSeccion icon-db-shape active" href="#primeraSeccion"></a>
+      </li>
+      <li>
+        <h1 style="display: none;">Segundo juego</h1>
+        <a class="segundaSeccion icon-db-shape" href="#segundaSeccion"></a>
+      </li>
+      <li>
+        <h1 style="display: none;">Tercer juego</h1>
+        <a class="terceraSeccion icon-db-shape" href="#terceraSeccion"></a>
+      </li>
+      <li>
+        <h1 style="display: none;">Quienes somos</h1>
+        <a class="cuartaSeccion icon-db-shape" href="#cuartaSeccion"></a>
+      </li>
+      <li>
+        <h1 style="display: none;">Contacta con nosotros</h1>
+        <a class="quintaSeccion icon-db-shape" href="#quintaSeccion"></a>
+      </li>
+    </ul>
+  </nav>    
+  <!-- Fin Menu circulos derecha -->
+
+  <!-- Textos de cada seccion -->
+  <div id="content">
+    <article id="primeraPagina">
+      <div class="contenido-seccion">
+      <header>
+        <h1>Primer juego</h1>
+        <h5>El juego de la Ruleta</h5>
+      </header>
+      <p>Este es el primero de los juegos que vamos a mostrar en la aplicación, donde se podrán elegir una
+        serie de escenarios con imágenes predeterminadas o podrás crear un juego e la ruleta las imagenes que tu elijas.</p>
+      <p>El juego de la ruleta consiste en una serie de imagenes que giran durante un pequeño periode de tiempo, deteniendose en una de ellas al azar y destacandola.</p>
+      <nav class="next-prev">
+        <hr>
+        <a class="icon-arrow-circle-down segundaSeccion" href=""></a>
+      </nav>
+      </div>
+    </article>
+
+    <article id="segundaSeccion">
+      <div class="contenido-seccion">
+      <header>
+        <h1>Segundo Juego</h1>
+        <h5>El juego del puzzle</h5>
+      </header>
+      <p>El juego del puzzle se trata de una serie de imagenes que tendran que ser relacionadas con el relieve de estas.</p>
+      <p>Para relacionar las imágenes tendremos que arrastar las imágenes al hueco que corresponda.El nivel de dificultad irá aumentando según se vayan superando los diferentes escenarios.</p>
+      
+      <nav class="next-prev">
+        <a class="icon-arrow-circle-up primeraSeccion" href=""></a>
+        <hr>
+        <a class="icon-arrow-circle-down terceraSeccion" href=""></a>
+      </nav>
+      
+      </div>
+    </article>
+
+    <article id="terceraSeccion">
+      <div class="contenido-seccion">
+      <header>
+        <h1>Tercer juego</h1>
+        <h5>El juedo de los sonidos</h5>
+      </header>
+      <p>Este juego es el que más dificultad tendrá de los tres. El jugador tendrá que asociar un sonido a una de las imagenes que aparezca en la pantalla.</p>
+      <nav class="next-prev">
+        <a class="icon-arrow-circle-up segundaSeccion" href=""></a>
+        <hr>
+        <a class="icon-arrow-circle-down cuartaSeccion" href=""></a>
+      </nav>
+      </div>
+    </article>
+
+    <article id="cuartaSeccion">
+      <div class="contenido-seccion">
+      <header>
+        <h1>Proyecto Fin de Grado</h1>
+        <h5>Padrino tecnológico</h5>
+      </header>
+      <p>Padrino Tecnológico es un Proyecto puesto en marcha por la Cátedra para la Mejora de la Autonomía Personal de Telefónica en la Universidad de Alcalá (CAPTA), que espera cubrir una necesidad detectada en colectivos de muy baja autonomía personal.</p>
+
+      <p>El programa de apadrinamientos se pone en marcha inicialmente para dar respuesta a las necesidades específicas de un grupo de niños que, por las características de sus lesiones, requieren de una personalización total de las soluciones de ayudas técnicas. </p>
+
+      <img id="bg3-4" src="../images/padrino.png" alt="Imagen de padrino tecnológico">
+      
+      <nav class="next-prev">
+        <a class="icon-arrow-circle-up terceraSeccion" href=""></a> 
+        <hr>
+        <a class="icon-arrow-circle-down quintaSeccion" href=""></a>
+      </nav>
+    </article>
+
+    <article id="quintaSeccion">
+      <div class="contenido-seccion">
+      <header>
+        <h1>Contacta con nosotros</h1>
+        <h5>Rellena este pequeño formulario para contactar con nosotros </h5>
+      </header>
+      
+      <form class="form contacta" name="form" ng-submit="changePassword(form)" novalidate>
+
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" name="nombre" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Comentario</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-lg btn-primary" type="submit">Enviar</button>
+      </form>
+
+      <nav class="next-prev">
+        <a class="icon-arrow-circle-up cuartaSeccion" href=""></a>
+        <hr>
+      </nav>
+    </article>
+  </div>
+  <!-- Fin Textos de cada seccion -->
+
+  
+</div>
+
+
+      <!-- Parallax foreground 
+      <div id="parallax-bg3" style="top: 0px;">
+        <img id="bg3-1" src="../images/alcala.png" width="400" height="400" alt="Montgolfier hot air balloon">
+        <img id="bg3-2" src="../images/balloon2.png" width="603" height="583" alt="Frameless parachute">
+        <img id="bg3-3" src="../images/balloon3.png" width="446" height="713" alt="Blanchard&#39;s air balloon">
+      </div>
+      -->
+      
+  <!-- Parallax  midground clouds -->
+  <div id="parallax-bg2" style="top: 0px;">
+    <img id="bg2-1" src="../images/cloud-lg1.png" alt="cloud">
+    <img id="bg2-2" src="../images/cloud-lg1.png" alt="cloud">
+    <img id="bg2-3" src="../images/cloud-lg1.png" alt="cloud">
+    <img id="bg2-4" src="../images/cloud-lg1.png" alt="cloud">
+    <img id="bg2-5" src="../images/cloud-lg1.png" alt="cloud">
+  </div>
+
+  <!-- Parallax  background clouds -->
+  <div id="parallax-bg1" style="top: 0px;">
+    <img id="bg1-1" src="../images/cloud-lg2.png" alt="cloud">
+    <img id="bg1-2" src="../images/cloud-lg2.png" alt="cloud">
+    <img id="bg1-3" src="../images/cloud-lg2.png" alt="cloud">
+    <img id="bg1-4" src="../images/cloud-lg2.png" alt="cloud">
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      redrawDotNav();
+
+      /* Scroll event handler */
+        $(window).bind('scroll',function(e){
+          parallaxScroll();
+        redrawDotNav();
+        });
+
+      /* Next/prev and primary nav btn click handlers */
+      $('a.primeraSeccion').click(function(){
+          $('html, body').animate({
+            scrollTop:0
+          }, 1000, function() {
+            parallaxScroll(); // Callback is required for iOS
+        });
+          return false;
+      });
+
+      $('a.segundaSeccion').click(function(){
+        $('html, body').animate({
+          scrollTop:$('#segundaSeccion').offset().top
+        }, 1000, function() {
+          parallaxScroll(); // Callback is required for iOS
+      });
+        return false;
+      });
+
+      $('a.terceraSeccion').click(function(){
+        $('html, body').animate({
+          scrollTop:$('#terceraSeccion').offset().top
+        }, 1000, function() {
+          parallaxScroll(); // Callback is required for iOS
+      });
+        return false;
+      });
+
+      $('a.cuartaSeccion').click(function(){
+        $('html, body').animate({
+          scrollTop:$('#cuartaSeccion').offset().top
+        }, 1000, function() {
+          parallaxScroll(); // Callback is required for iOS
+      });
+        return false;
+      });
+
+      $('a.quintaSeccion').click(function(){
+        $('html, body').animate({
+          scrollTop:$('#quintaSeccion').offset().top
+        }, 1000, function() {
+          parallaxScroll(); // Callback is required for iOS
+      });
+        return false;
+      });
+
+        /* Show/hide dot lav labels on hover */
+        $('nav#primary a').hover(
+          function () {
+          $(this).prev('h1').show();
+        },
+        function () {
+          $(this).prev('h1').hide();
+        }
+        );
+
+
+
+    });
+
+    /* Scroll the background layers */
+    function parallaxScroll(){
+      var scrolled = $(window).scrollTop();
+      $('#parallax-bg1').css('top',(0-(scrolled*.30))+'px');
+      $('#parallax-bg2').css('top',(0-(scrolled*.10))+'px');
+      $('#parallax-bg3').css('top',(0-(scrolled*.80))+'px');
+    }
+
+    /* Set navigation dots to an active state as the user scrolls */
+    function redrawDotNav(){
+      var section1Top =  0;
+      // The top of each section is offset by half the distance to the previous section.
+      var section2Top =  $('#segundaSeccion').offset().top - (($('#terceraSeccion').offset().top - $('#segundaSeccion').offset().top) / 2);
+      var section3Top =  $('#terceraSeccion').offset().top - (($('#cuartaSeccion').offset().top - $('#terceraSeccion').offset().top) / 2);
+      var section4Top =  $('#cuartaSeccion').offset().top - (($(document).height() - $('#cuartaSeccion').offset().top) / 2);
+      var section5Top =  $('#quintaSeccion').offset().top - (($(document).height() - $('#quintaSeccion').offset().top) / 2);
+      $('nav#primary a').removeClass('active');
+      if($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top){
+        $('nav#primary a.inicioPagina').addClass('active');
+      } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top){
+        $('nav#primary a.segundaSeccion').addClass('active');
+      } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top){
+        $('nav#primary a.terceraSeccion').addClass('active');
+      } else if ($(document).scrollTop() >= section4Top){
+        $('nav#primary a.cuartaSeccion').addClass('active');
+      } else if ($(document).scrollTop() >= section5Top){
+        $('nav#primary a.quintaSeccion').addClass('active');
+      }
+
+    }
+  </script>
