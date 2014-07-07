@@ -89,6 +89,8 @@ angular.module('aplicacionCompleta2App')
         }).$promise;
       },
 
+      
+
       /**
        * Gets all available info on authenticated user
        * 

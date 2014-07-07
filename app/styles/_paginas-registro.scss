@@ -1,7 +1,7 @@
 .pagina-registro{
 	background-color: white;
 	margin-top: 10%;
-	opacity: .5;
+	opacity: .7;
 	.contenedor{
 		padding: 5%;
 		h1{
@@ -25,5 +25,16 @@
 				color: #21a97e;
 			}
 		}
+		.destacado-datos-usuario{
+			h1{
+				text-align: left;
+			}
+		}
 	}
+}
+   
+///////////// ESTILOS DEL ACORDEON ////////////
+
+.panel-title a{
+	cursor: pointer;
 }

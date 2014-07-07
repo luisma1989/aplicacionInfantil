@@ -1,0 +1,18 @@
+.modal.in .modal-dialog {
+  margin-top: 20%;
+  .modal-header{
+  	.modal-title{
+  		font: 35px/36px "Oswald", sans-serif;
+      color: #e15b32;
+  	}
+  	.modal-subtitle{
+  		font: 25px/26px "Oswald", sans-serif;
+			color: #21a97e;	
+  	}
+	}
+	button{
+		font: 300 2em/1em Lato;
+		border-radius: 0;
+		background-color: #21a97e;
+	}
+}
