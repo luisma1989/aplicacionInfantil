@@ -31,6 +31,10 @@ angular.module('aplicacionCompleta2App', [
         controller: 'UsuarioCtrl',
         authenticate: true
       })
+      .when('/ruleta', {
+        templateUrl: 'partials/juegos/ruleta.html',
+        controller: 'RuletaCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

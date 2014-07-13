@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-lg-12 ruleta">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>
+
+<p><a ng-click="slides.pause()">pausa</a></p>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div ng-click="open()" class="circle-container">
+      <div class="outer-ring"></div>
+      <div class="circle">
+        <div class="front">
+          <p>CONFIG</p>
+        </div>
+        <div class="back">
+          <p>CONFIG</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="circle-container">
+      <div class="outer-ring"></div>
+      <div class="circle">
+        <div class="front">
+          <p>Pulsa!</p>
+        </div>
+        <div class="back">
+          <p>Pulsa!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+        
+
+
