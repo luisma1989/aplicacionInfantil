@@ -12,16 +12,16 @@ angular.module('aplicacionCompleta2App')
     var self = this,
 		slides = self.slides = $scope.slides = [
 		  {
-		    image: 'http://lorempixel.com/400/400/'
+		    image: '/images/ruleta/1.png'
 		  },
 		  {
-		    image: 'http://lorempixel.com/400/400/food'
+		    image: '/images/ruleta/2.png'
 		  },
 		  {
-		    image: 'http://lorempixel.com/400/400/sports'
+		    image: '/images/ruleta/1.png'
 		  },
 		  {
-		    image: 'http://lorempixel.com/400/400/people'
+		    image: '/images/ruleta/2.png'
 		  }
     ],
     currentIndex = -1,

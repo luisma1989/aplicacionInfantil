@@ -142,7 +142,8 @@
     <article id="segundaSeccion">
       <div class="contenido-seccion">
       <header>
-        <h1>Segundo Juego</h1>
+        <h1 ng-if="!currentUser"><a ng-click="open()">Segundo Juego</a></h1>        
+        <h1 ng-if="currentUser"><a href="/puzzle">Segundo Juego</a></h1>
         <h5>El juego del puzzle</h5>
       </header>
       <p>El juego del puzzle se trata de una serie de imagenes que tendran que ser relacionadas con el relieve de estas.</p>
