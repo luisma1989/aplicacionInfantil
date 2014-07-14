@@ -5,7 +5,7 @@
 <div class="modal-body">  
 	<ul class="ch-grid">
   	<li>
-      <a href="/login">
+      <a href="/login" ng-click="cancel()">
         <div class="ch-item">       
           <div class="ch-info">
             <div class="ch-info-front color-front-1">
@@ -19,7 +19,7 @@
       </a>
     </li>
     <li>
-      <a href="/signup" ng-click="ok()">
+      <a href="/signup" ng-click="cancel()">
         <div class="ch-item">       
           <div class="ch-info">
             <div class="ch-info-front color-front-2">
@@ -36,5 +36,5 @@
 
 </div>
 <div class="modal-footer">
-    <button class="btn btn-lg btn-primary" ng-click="ok()">Seguir sin guardar</button>
+    <a href="/ruleta" class="boton btn btn-lg btn-primary" data-dismiss="modal" ng-click="cancel()">Seguir sin guardar</a>
 </div>
