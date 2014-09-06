@@ -122,6 +122,8 @@
 
   <!-- Textos de cada seccion -->
   <div id="content">
+
+
     <article id="primeraPagina">
       <div class="contenido-seccion">
       <header>
@@ -143,7 +145,7 @@
       <div class="contenido-seccion">
       <header>
         <h1 ng-if="!currentUser"><a ng-click="open()">Segundo Juego</a></h1>        
-        <h1 ng-if="currentUser"><a href="/puzzle">Segundo Juego</a></h1>
+        <h1 ng-if="currentUser"><a href="/simon">Segundo Juego</a></h1>
         <h5>El juego del puzzle</h5>
       </header>
       <p>El juego del puzzle se trata de una serie de imagenes que tendran que ser relacionadas con el relieve de estas.</p>
@@ -161,7 +163,8 @@
     <article id="terceraSeccion">
       <div class="contenido-seccion">
       <header>
-        <h1>Tercer juego</h1>
+        <h1 ng-if="!currentUser"><a ng-click="open()">Tercer juego</a></h1>        
+        <h1 ng-if="currentUser"><a href="/simon">Tercer juego</a></h1>
         <h5>El juedo de los sonidos</h5>
       </header>
       <p>Este juego es el que más dificultad tendrá de los tres. El jugador tendrá que asociar un sonido a una de las imagenes que aparezca en la pantalla.</p>
@@ -231,15 +234,7 @@
 </div>
 
 
-      <!-- Parallax foreground 
-      <div id="parallax-bg3" style="top: 0px;">
-        <img id="bg3-1" src="../images/alcala.png" width="400" height="400" alt="Montgolfier hot air balloon">
-        <img id="bg3-2" src="../images/balloon2.png" width="603" height="583" alt="Frameless parachute">
-        <img id="bg3-3" src="../images/balloon3.png" width="446" height="713" alt="Blanchard&#39;s air balloon">
-      </div>
-      -->
-      
-  <!-- Parallax  midground clouds -->
+  <!-- Nubes parallax-->
   <div id="parallax-bg2" style="top: 0px;">
     <img id="bg2-1" src="../images/cloud-lg1.png" alt="cloud">
     <img id="bg2-2" src="../images/cloud-lg1.png" alt="cloud">
@@ -248,7 +243,7 @@
     <img id="bg2-5" src="../images/cloud-lg1.png" alt="cloud">
   </div>
 
-  <!-- Parallax  background clouds -->
+  <!-- Nubes parallax-->
   <div id="parallax-bg1" style="top: 0px;">
     <img id="bg1-1" src="../images/cloud-lg2.png" alt="cloud">
     <img id="bg1-2" src="../images/cloud-lg2.png" alt="cloud">
@@ -260,18 +255,16 @@
     $(document).ready(function() {
       redrawDotNav();
 
-      /* Scroll event handler */
         $(window).bind('scroll',function(e){
           parallaxScroll();
-        redrawDotNav();
+          redrawDotNav();
         });
 
-      /* Next/prev and primary nav btn click handlers */
       $('a.primeraSeccion').click(function(){
           $('html, body').animate({
             scrollTop:0
           }, 1000, function() {
-            parallaxScroll(); // Callback is required for iOS
+            parallaxScroll(); 
         });
           return false;
       });
@@ -280,7 +273,7 @@
         $('html, body').animate({
           scrollTop:$('#segundaSeccion').offset().top
         }, 1000, function() {
-          parallaxScroll(); // Callback is required for iOS
+          parallaxScroll();
       });
         return false;
       });
@@ -289,7 +282,7 @@
         $('html, body').animate({
           scrollTop:$('#terceraSeccion').offset().top
         }, 1000, function() {
-          parallaxScroll(); // Callback is required for iOS
+          parallaxScroll();
       });
         return false;
       });
@@ -298,7 +291,7 @@
         $('html, body').animate({
           scrollTop:$('#cuartaSeccion').offset().top
         }, 1000, function() {
-          parallaxScroll(); // Callback is required for iOS
+          parallaxScroll();
       });
         return false;
       });
@@ -307,12 +300,11 @@
         $('html, body').animate({
           scrollTop:$('#quintaSeccion').offset().top
         }, 1000, function() {
-          parallaxScroll(); // Callback is required for iOS
+          parallaxScroll();
       });
         return false;
       });
 
-        /* Show/hide dot lav labels on hover */
         $('nav#primary a').hover(
           function () {
           $(this).prev('h1').show();
@@ -321,23 +313,16 @@
           $(this).prev('h1').hide();
         }
         );
-
-
-
     });
 
-    /* Scroll the background layers */
     function parallaxScroll(){
       var scrolled = $(window).scrollTop();
       $('#parallax-bg1').css('top',(0-(scrolled*.30))+'px');
       $('#parallax-bg2').css('top',(0-(scrolled*.10))+'px');
-      $('#parallax-bg3').css('top',(0-(scrolled*.80))+'px');
     }
 
-    /* Set navigation dots to an active state as the user scrolls */
     function redrawDotNav(){
       var section1Top =  0;
-      // The top of each section is offset by half the distance to the previous section.
       var section2Top =  $('#segundaSeccion').offset().top - (($('#terceraSeccion').offset().top - $('#segundaSeccion').offset().top) / 2);
       var section3Top =  $('#terceraSeccion').offset().top - (($('#cuartaSeccion').offset().top - $('#terceraSeccion').offset().top) / 2);
       var section4Top =  $('#cuartaSeccion').offset().top - (($(document).height() - $('#cuartaSeccion').offset().top) / 2);

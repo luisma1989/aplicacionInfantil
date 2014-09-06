@@ -6,19 +6,19 @@ var express = require('express'),
     mongoose = require('mongoose');
 
 /**
- * Main application file
+ * Archivo principal de la aplicación
  */
 
-// Set default node environment to development
+// Inicializa por defecto el tipo de entorno a desarrollo
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-// Application Config
+// Configuración de la aplicación
 var config = require('./lib/config/config');
 
-// Connect to database
+// Conexión con la base de datos
 var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
-// Bootstrap models
+// Modelos de Bootstrap
 var modelsPath = path.join(__dirname, 'lib/models');
 fs.readdirSync(modelsPath).forEach(function (file) {
   if (/(.*)\.(js$|coffee$)/.test(file)) {
@@ -26,15 +26,14 @@ fs.readdirSync(modelsPath).forEach(function (file) {
   }
 });
 
-// Populate empty DB with sample data
 require('./lib/config/dummydata');
   
-// Passport Configuration
+// Configuración de Passport
 var passport = require('./lib/config/passport');
 
 var app = express();
 
-// Express settings
+// Opciones de Express
 require('./lib/config/express')(app);
 
 // Routing
@@ -45,5 +44,4 @@ app.listen(config.port, function () {
   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });
 
-// Expose app
 exports = module.exports = app;

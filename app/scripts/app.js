@@ -39,6 +39,10 @@ angular.module('aplicacionCompleta2App', [
         templateUrl: 'partials/juegos/puzzle.html',
         controller: 'PuzzleCtrl'
       })
+      .when('/simon', {
+        templateUrl: 'partials/juegos/simon.html',
+        controller: 'SimonCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

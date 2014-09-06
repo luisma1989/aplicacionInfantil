@@ -1,0 +1,94 @@
+<h3>Simon</h3>
+
+<div ng-show="jugando">
+    <simon
+        dificultad="dificultad"
+        on-end="muestraResultado(resultado)"/>
+</div>
+<div ng-hide="jugando">
+    <p ng-show="resultado">
+        Tus resultados:
+            Tiempo: {{resultado.tiempo}}s.
+            Movientos: {{resultado.movimientos}}.
+            Partidas jugadas: {{resultados.length}}
+    </p>
+    <p>Selecciona la dificultad:</p>
+
+    <ul class="ch-grid">
+        <li>
+          <a href="" ng-click="empieza(1)">
+            <div class="ch-item">       
+              <div class="ch-info">
+                <div class="ch-info-front color-front-1">
+                  <h3>Fácil</h3>
+                </div>
+                <div class="ch-info-back color-back-1">
+                  <p>Accede con tu usuario y contraseña</p>
+                </div>  
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" ng-click="empieza(2)">
+            <div class="ch-item">       
+              <div class="ch-info">
+                <div class="ch-info-front color-front-2">
+                  <h3>Medio</h3>
+                </div>
+                <div class="ch-info-back color-back-2">
+                  <p>Crea tu propia cuenta de usuario</p>
+                </div>  
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" ng-click="empieza(3)">
+            <div class="ch-item">
+              <div class="ch-info">
+                <div class="ch-info-front color-front-2">
+                  <h3>Difícil</h3>
+                </div>
+                <div class="ch-info-back color-back-2">
+                  <p>Modifica los datos de tu usuario</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" ng-click="empieza(4)">
+            <div class="ch-item">
+              <div class="ch-info">
+                  <div class="ch-info-front color-front-3">
+                    <h3>PRO</h3>
+                  </div>
+                  <div class="ch-info-back color-back-3">
+                    <p>Si quieres saber quienes somos</p>
+                  </div>
+              </div>
+              </div>
+            </a>
+        </li>
+    </ul>
+    <table class="table" ng-show="resultados.length > 0">
+        <tr>
+            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Dificultad</a></th>
+            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Movimientos</a></th>
+            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Tiempo</a></th>
+            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Motivo</a></th>
+        </tr>
+        <tr ng-repeat="res in resultados | orderBy:predicate:reverse"" ng-class="{actual: (res == resultado)}">
+            <td><span class="label"
+                ng-class="{
+                'label-success': (res.dificultad == 1),
+                'label-info': (res.dificultad == 2),
+                'label-warning': (res.dificultad == 3),
+                'label-danger': (res.dificultad == 4)
+            }">{{res.dificultad}}</span></td>
+            <td>{{res.movimientos}}</td>
+            <td>{{res.tiempo}}s</td>
+            <td>{{res.motivo.tipo}}</td>
+        </tr>
+    </table>

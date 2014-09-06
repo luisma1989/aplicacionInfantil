@@ -5,7 +5,6 @@ angular.module('aplicacionCompleta2App')
 
 	  $scope.cancel = function () {
 	    $modalInstance.dismiss('cancel');
-	    console.log('luisma');
 	  };
     
 	});
