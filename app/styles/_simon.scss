@@ -1,5 +1,6 @@
 .cuadrado{
-    height: 22em;
+    height: 18em;
+    width: 18em;
     pointer-events: all;
     opacity: 0.4;
     transition-property: opacity;
@@ -8,3 +9,89 @@
         opacity: 1;
     }
 }
+
+.titulo-simon{
+	margin-top: 50px;
+	font: 50px/51px "Oswald", sans-serif;
+    color: #e15b32;
+    text-align: center;
+    padding: 1em 0em 1em 0em;
+    background-color: white;
+    opacity: 0.6; 
+}
+
+.nivel-dificultad{
+	font: 200 3em/1em Lato;
+	span{
+      	font: 50px/51px "Oswald", sans-serif;
+    	color: #e15b32;
+	}
+}
+
+.volver-simon, .volver-simon:hover, .volver-simon:active{
+	font: 200 3em/1em Lato;
+	font-weight: 300;
+	background-color: white;
+	opacity: 0.7;
+	padding: 10px;
+	color: #21a97e;text-align: center;
+	a:hover{
+		text-decoration: none;
+		color: #21a97e;
+	}
+	span{
+		color: #21a97e;
+	}
+}
+
+
+.tabla-resultados{
+	th{
+		text-align: center;
+		font: 28px/38px "Oswald", sans-serif;
+		background-color: white;
+		opacity: 0.7;
+		color: #428bca;
+		padding-left: 12px;
+		a:hover, a:active{
+			text-decoration: none;
+			color: #428bca;
+		}
+	}
+	td{
+		text-align: center;
+		font: 30px/31px "Oswald", sans-serif;
+		color: #21a97e;
+		background-color: white;
+		opacity: 0.5;
+		border-top: 3px white solid; 
+	}
+}
+
+.boton-nivel{
+	padding: .2em .6em .2em;
+	font-size: 75%;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	opacity: 1;
+}
+
+.boton-comienzo{
+	background-color: #e15b32;
+	opacity: 0.8;
+	color: white;
+	font: 70px/70px "Oswald", sans-serif;
+	padding: 30px;
+	text-align: center;
+}
+
+.caja-simon{
+	width: 100%;
+	text-align: center;
+}
+
+.color-simon-rojo{background-color: red;}
+.color-simon-azul{background-color: blue;}
+.color-simon-amarillo{background-color: yellow;}
+.color-simon-verde{background-color: green;}

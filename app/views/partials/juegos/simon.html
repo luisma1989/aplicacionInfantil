@@ -1,4 +1,4 @@
-<h3>Simon</h3>
+
 
 <div ng-show="jugando">
     <simon
@@ -6,13 +6,10 @@
         on-end="muestraResultado(resultado)"/>
 </div>
 <div ng-hide="jugando">
-    <p ng-show="resultado">
-        Tus resultados:
-            Tiempo: {{resultado.tiempo}}s.
-            Movientos: {{resultado.movimientos}}.
-            Partidas jugadas: {{resultados.length}}
-    </p>
-    <p>Selecciona la dificultad:</p>
+    <h1 class="titulo-simon">JUEGA AL SIMON</h1>
+    <h2 class="nivel-dificultad" ng-show="resultado">
+        Partidas jugadas: <span>{{resultados.length}}</span>
+    </h2>
 
     <ul class="ch-grid">
         <li>
@@ -23,7 +20,7 @@
                   <h3>Fácil</h3>
                 </div>
                 <div class="ch-info-back color-back-1">
-                  <p>Accede con tu usuario y contraseña</p>
+                  <p>Si eres principiante...</p>
                 </div>  
               </div>
             </div>
@@ -37,7 +34,7 @@
                   <h3>Medio</h3>
                 </div>
                 <div class="ch-info-back color-back-2">
-                  <p>Crea tu propia cuenta de usuario</p>
+                  <p>Aquí podrás jugar con un poco más de nivel</p>
                 </div>  
               </div>
             </div>
@@ -51,7 +48,7 @@
                   <h3>Difícil</h3>
                 </div>
                 <div class="ch-info-back color-back-2">
-                  <p>Modifica los datos de tu usuario</p>
+                  <p>Cuidado! No todos pueden jugar a este nivel</p>
                 </div>
               </div>
             </div>
@@ -65,30 +62,38 @@
                     <h3>PRO</h3>
                   </div>
                   <div class="ch-info-back color-back-3">
-                    <p>Si quieres saber quienes somos</p>
+                    <p>¿Seguro que puedes?</p>
                   </div>
               </div>
               </div>
             </a>
         </li>
     </ul>
-    <table class="table" ng-show="resultados.length > 0">
-        <tr>
-            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Dificultad</a></th>
-            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Movimientos</a></th>
-            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Tiempo</a></th>
-            <th><a href="" ng-click="predicate = 'dificultad'; reverse=false">Motivo</a></th>
-        </tr>
-        <tr ng-repeat="res in resultados | orderBy:predicate:reverse"" ng-class="{actual: (res == resultado)}">
-            <td><span class="label"
-                ng-class="{
-                'label-success': (res.dificultad == 1),
-                'label-info': (res.dificultad == 2),
-                'label-warning': (res.dificultad == 3),
-                'label-danger': (res.dificultad == 4)
-            }">{{res.dificultad}}</span></td>
-            <td>{{res.movimientos}}</td>
-            <td>{{res.tiempo}}s</td>
-            <td>{{res.motivo.tipo}}</td>
-        </tr>
+
+    <h2 class="volver-simon"><a href="/"><span class="icon-mail-reply"></span>Volver a la página incial!</a></h2>
+
+    <table class="table tabla-resultados" ng-show="resultados.length > 0">
+        <thead>
+            <tr>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'dificultad'; reverse=!reverse">Dificultad</a></th>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'movimientos'; reverse=!reverse">Movimientos</a></th>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'tiempo'; reverse=!reverse">Tiempo</a></th>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'motivo.tipo'; reverse=!reverse">Motivo</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="res in resultados | orderBy:predicate:reverse" ng-class="{actual: (res == resultado)}">
+                <td><span class="boton-nivel"
+                    ng-class="{
+                    'color-back-1': (res.dificultad == 1),
+                    'color-back-2': (res.dificultad == 2),
+                    'color-back-3': (res.dificultad == 3),
+                    'color-back-4': (res.dificultad == 4)
+                }">{{res.dificultad}}</span></td>
+                <td>{{res.movimientos}}</td>
+                <td>{{res.tiempo}}s</td>
+                <td>{{res.motivo.tipo}}</td>
+            </tr>
+        </tbody>
     </table>
+</div>
