@@ -3,7 +3,7 @@
 angular.module('aplicacionCompleta2App')
 	.directive('simon', function ($q, $timeout, Tones) {
     return {
-      templateUrl: '/views/partials/juegos/simon2.html',
+      templateUrl: '/views/partials/juegos/simon.html',
       restrict: 'E',
       scope: {
         'fin': '&onEnd',

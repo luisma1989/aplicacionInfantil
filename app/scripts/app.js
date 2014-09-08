@@ -39,8 +39,8 @@ angular.module('aplicacionCompleta2App', [
         templateUrl: 'partials/juegos/puzzle.html',
         controller: 'PuzzleCtrl'
       })
-      .when('/simon', {
-        templateUrl: 'partials/juegos/simon.html',
+      .when('/inicioSimon', {
+        templateUrl: 'partials/juegos/inicioSimon.html',
         controller: 'SimonCtrl'
       })
       .otherwise({

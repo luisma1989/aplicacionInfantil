@@ -1,0 +1,99 @@
+
+
+<div ng-show="jugando">
+    <simon
+        dificultad="dificultad"
+        on-end="muestraResultado(resultado)"/>
+</div>
+<div ng-hide="jugando">
+    <h1 class="titulo-simon">JUEGA AL SIMON</h1>
+    <h2 class="nivel-dificultad" ng-show="resultado">
+        Partidas jugadas: <span>{{resultados.length}}</span>
+    </h2>
+
+    <ul class="ch-grid">
+        <li>
+          <a href="" ng-click="empieza(1)">
+            <div class="ch-item">       
+              <div class="ch-info">
+                <div class="ch-info-front color-front-1">
+                  <h3>Fácil</h3>
+                </div>
+                <div class="ch-info-back color-back-1">
+                  <p>Si eres principiante...</p>
+                </div>  
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" ng-click="empieza(2)">
+            <div class="ch-item">       
+              <div class="ch-info">
+                <div class="ch-info-front color-front-2">
+                  <h3>Medio</h3>
+                </div>
+                <div class="ch-info-back color-back-2">
+                  <p>Aquí podrás jugar con un poco más de nivel</p>
+                </div>  
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" ng-click="empieza(3)">
+            <div class="ch-item">
+              <div class="ch-info">
+                <div class="ch-info-front color-front-2">
+                  <h3>Difícil</h3>
+                </div>
+                <div class="ch-info-back color-back-2">
+                  <p>Cuidado! No todos pueden jugar a este nivel</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="" ng-click="empieza(4)">
+            <div class="ch-item">
+              <div class="ch-info">
+                  <div class="ch-info-front color-front-3">
+                    <h3>PRO</h3>
+                  </div>
+                  <div class="ch-info-back color-back-3">
+                    <p>¿Seguro que puedes?</p>
+                  </div>
+              </div>
+              </div>
+            </a>
+        </li>
+    </ul>
+
+    <h2 class="volver-simon"><a href="/"><span class="icon-mail-reply"></span>Volver a la página incial!</a></h2>
+
+    <table class="table tabla-resultados" ng-show="resultados.length > 0">
+        <thead>
+            <tr>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'dificultad'; reverse=!reverse">Dificultad</a></th>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'movimientos'; reverse=!reverse">Movimientos</a></th>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'tiempo'; reverse=!reverse">Tiempo</a></th>
+                <th class="icon-arrow-circle-down"><a href="" ng-click="predicate = 'motivo.tipo'; reverse=!reverse">Motivo</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="res in resultados | orderBy:predicate:reverse" ng-class="{actual: (res == resultado)}">
+                <td><span class="boton-nivel"
+                    ng-class="{
+                    'color-back-1': (res.dificultad == 1),
+                    'color-back-2': (res.dificultad == 2),
+                    'color-back-3': (res.dificultad == 3),
+                    'color-back-4': (res.dificultad == 4)
+                }">{{res.dificultad}}</span></td>
+                <td>{{res.movimientos}}</td>
+                <td>{{res.tiempo}}s</td>
+                <td>{{res.motivo.tipo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

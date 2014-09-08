@@ -24,12 +24,11 @@
   </div>
 
   <div class="col-sm-6 contenedor">
-    <form class="form contacta" name="form" ng-submit="register(form)" novalidate>
 
+    <form class="form contacta" name="form" ng-submit="register(form)" novalidate>
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                           'has-error': form.name.$invalid && submitted }">
         <label>Name</label>
-
         <input type="text" name="name" class="form-control" ng-model="user.name"
                required/>
         <p class="help-block" ng-show="form.name.$error.required && submitted">
@@ -37,6 +36,7 @@
         </p>
       </div>
 
+      
       <div class="form-group" ng-class="{ 'has-success': form.apellidos.$valid && submitted,
                                           'has-error': form.apellidos.$invalid && submitted }">
         <label>Apellidos</label>
@@ -50,14 +50,12 @@
       <div class="form-group" ng-class="{ 'has-success': form.edad.$valid && submitted,
                                           'has-error': form.edad.$invalid && submitted }">
         <label>Edad</label>
-
         <input type="text" name="edad" class="form-control" ng-model="user.edad"
                required/>
         <p class="help-block" ng-show="form.edad.$error.required && submitted">
           La edad es necesaria.
         </p>
       </div>
-
       <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                           'has-error': form.email.$invalid && submitted }">
         <label>Email</label>
@@ -75,11 +73,9 @@
           {{ errors.email }}
         </p>
       </div>
-
       <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                           'has-error': form.password.$invalid && submitted }">
         <label>Contraseña</label>
-
         <input type="password" name="password" class="form-control" ng-model="user.password"
                ng-minlength="3"
                required
@@ -92,7 +88,6 @@
           {{ errors.password }}
         </p>
       </div>
-
       <button class="btn btn-lg btn-primary" type="submit">Registrate</button>
     </form>
   </div>
