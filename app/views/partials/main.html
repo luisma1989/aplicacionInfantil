@@ -105,7 +105,7 @@
         <a class="segundaSeccion icon-db-shape" href="#segundaSeccion"></a>
       </li>
       <li>
-        <h1 style="display: none;">Tercer juego</h1>
+        <h1 style="display: none;">Crea un juego</h1>
         <a class="terceraSeccion icon-db-shape" href="#terceraSeccion"></a>
       </li>
       <li>
@@ -146,10 +146,11 @@
       <header>
         <h1 ng-if="!currentUser"><a ng-click="open()">Segundo Juego</a></h1>        
         <h1 ng-if="currentUser"><a href="/inicioSimon">Segundo Juego</a></h1>
-        <h5>El juego del puzzle</h5>
+        <h5>Simon</h5>
       </header>
-      <p>El juego del puzzle se trata de una serie de imagenes que tendran que ser relacionadas con el relieve de estas.</p>
-      <p>Para relacionar las imágenes tendremos que arrastar las imágenes al hueco que corresponda.El nivel de dificultad irá aumentando según se vayan superando los diferentes escenarios.</p>
+      <p>Este juego esta basado en el famoso juego de "Simon dice". Esta compuesto por cuatro cuadrantes cada uno de un color: rojo, verde, amarillo y azul. </p>
+      <p>El juego de forma aleatoria va iluminando los cuadrantes de colores, y a la vez que se ilumina cada cuadrante emite un sonido propio. Después de esperar, el usuario debe ir introduciendo la secuencia mostrada en el orden correcto, ayudándose de su memoria visual y sonora.</p>
+      <p>Si lo consigue, éste responderá con una secuencia más larga, y así sucesivamente. Si falla, el usuario debe volver a empezar. Los distintos niveles de dificultad van aumentando la velocidad de la secuencia a repetir.</p>
       
       <nav class="next-prev">
         <a class="icon-arrow-circle-up primeraSeccion" href=""></a>
@@ -163,11 +164,11 @@
     <article id="terceraSeccion">
       <div class="contenido-seccion">
       <header>
-        <h1 ng-if="!currentUser"><a ng-click="open()">Tercer juego</a></h1>        
-        <h1 ng-if="currentUser"><a href="/simon">Tercer juego</a></h1>
-        <h5>El juedo de los sonidos</h5>
+        <h1><a href="https://bitbucket.org/" target="_blank">Para crear juegos</a></h1>
+        <h5>Si quieres colaborar...</h5>
       </header>
-      <p>Este juego es el que más dificultad tendrá de los tres. El jugador tendrá que asociar un sonido a una de las imagenes que aparezca en la pantalla.</p>
+      <p>Este enlace lleva al repositorio donde se encuentra todo el código de esta aplicación. Para crear un juego solo tienes que bajarte el código y añadir todo el desarrollo que hayas creado.</p>
+      <p>Para todo esto deberás ser usuario de <a href="https://bitbucket.org/" target="_blank">Bitbukect.</a></p>
       <nav class="next-prev">
         <a class="icon-arrow-circle-up segundaSeccion" href=""></a>
         <hr>

@@ -1,5 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin:700);
 
+.boton-ruleta-grande{
+	height: 100px;
+	border: 3px solid white;
+}
+
+
 .ruleta{
 	background-color: white;
 	opacity: 0.7;
@@ -10,6 +16,19 @@
 		margin-left: -20px;
 	}
 }
+  
+  
+.container-ruleta {
+	width: 227px;
+	height: 227px;
+	position: relative;
+	margin: 0 auto 40px;
+	border: 1px solid #CCC;
+	-webkit-perspective: 4000px;
+	   -moz-perspective: 4000px;
+	     -o-perspective: 4000px;
+	        perspective: 4000px;
+}
 .carousel-inner{
 	border: 2px solid red;
 	.left{
@@ -17,99 +36,94 @@
 	}
 }
 
+  pre {
+    background: #111;
+    color: white;
+    padding: 0.8em;
+    white-space: pre-wrap;
+  }
 
 
-///////////// BOTONES CIRCULARES //////////////
-.circle-container {
-	position: relative;
-	margin: 0 auto;	
-	cursor: pointer;
-}
-		
-.circle-container:hover .circle {
-	transform: rotate3d(45, 45, 0, 180deg);
-}
-		
-.circle-container:hover .outer-ring {
-	transform: rotate3d(45, 0, 0, 180deg);
+  code .s1,
+  code .s { color: #78BD55; } /* string */
+  code .mi, /* integer */
+  code .cp { color: #5298D4; } /* doctype */
+  code .k { color: #E39B79; } /* keyword */
+  code .kd, /* storage */
+  code .na { color: #A9D866; } /* markup attribute */
+  code .p  { color: #EDB; } /* punctuation */
+  code .o  { color: #F63; }   /* operator */
+  code .nb { color: #AA97AC;} /* support */
+
+  /* comment */
+  code .c,
+  code .c1 { color: #666; font-style: italic; }
+
+  code .nt { color: #A0C8FC; } /* Markup open tag */
+
+  code .nf { color: #9EA8B8; } /* css id */
+  code .nc { color: #A78352; }  /* CSS class */
+  code .m  { color: #DE8E50; } /* CSS value */
+  code .nd { color: #9FAD7E; } /* CSS pseudo selector */
+  
+
+
+.container-ruleta {
+    width: 406px;
+    height: 437px;
+    position: relative;
+    margin: 0 auto 40px;
+    -webkit-perspective: 4000px;
+       -moz-perspective: 4000px;
+         -o-perspective: 4000px;
+            perspective: 4000px;
 }
 
-.circle-container:hover .outer-outer-ring {
-	transform: rotate3d(0, 45, 0, 180deg);
-}
-		
-.circle-container, .front, .back {
-	width: 171px;
-	height: 171px;
-	background-color: rgba(0,0,0,0);
-}
-		
-.circle, .outer-ring, .outer-outer-ring {
-	transition: 0.5s;
-	transform-style: preserve-3d;
-	transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-}
-		
-.circle {
-	position: relative;
-	width: 171px;
-	height: 171px;
-}
-		
-.front, .back {
-	border-radius: 50%;
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-		
-.front {
-	background-color: #fff;
-	z-index: 2;
-}
-		
-.front p, .back p {
-	margin-top: 1.2em;
-	font-family: cabin, sans-serif;
-	font-weight: 700;
-	font-size: 3em;
-	text-align: center;
-	color: #c02227;
-}
-		
-.back {
-	transform: rotate3d(45,45,0,180deg);
-	background-color: #fff;
-}
-		
-.back-logo {
-	width: 60%;
-	display: block;
-	margin: 2em auto;
-}
-		
-.outer-ring {
-	position: absolute;
-	top: -10px;
-	left: -10px;
-	border-radius: 50%;
-	border: 2px solid #fff;
-	width: 191px;
-	height: 191px;
-	background-color: rgba(255,255,255,0);
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+#carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+         -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    .panels-backface-invisible figure {
+	    -webkit-backface-visibility: hidden;
+	       -moz-backface-visibility: hidden;
+	         -o-backface-visibility: hidden;
+	            backface-visibility: hidden;
+    }
+
 }
 
-.outer-outer-ring {
-	position: absolute;
-	top: -20px;
-	left: -20px;
-	border-radius: 50%;
-	border: 2px solid #fff;
-	width: 211px;
-	height: 211px;
-	background-color: rgba(255,255,255,0);
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+.ready #carousel {
+    -webkit-transition: all 5s ease;
+       -moz-transition: all 5s ease;
+         -o-transition: all 5s ease;
+            transition: all 5s ease;
 }
+
+#carousel figure {
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 10px;
+    top: 10px;
+    border: 2px solid black;
+    line-height: 116px;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    -webkit-transition: all 5s ease;
+       -moz-transition: all 5s ease;
+         -o-transition: all 5s ease;
+            transition: all 5s ease;
+}
+
+.imagen-carousel{
+ 	border: 3px solid white;
+}
+
+

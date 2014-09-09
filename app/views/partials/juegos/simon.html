@@ -5,16 +5,18 @@
   <span class="btn boton-comienzo" ng-show="estado == 'esperando'">COMENZAR!</span>
 
   <div ng-hide="estado == 'esperando'">
-    <div class="col-sm-12 caja-simon">
-      <div class="col-sm-6 cuadrado color-simon-rojo" ng-click="click(1)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==1)}"> 
+    <div class="contenedor-simon">
+      <div class="col-sm-12 caja-simon">
+        <div class="col-sm-6 cuadrado color-simon-rojo" ng-click="click(1)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==1)}"> 
+        </div>
+        <div class="col-sm-6 cuadrado color-simon-azul" ng-click="click(2)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==2)}">
+        </div>
       </div>
-      <div class="col-sm-6 cuadrado color-simon-azul" ng-click="click(2)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==2)}">
-      </div>
-    </div>
-    <div class="col-sm-12 caja-simon">
-      <div class="col-sm-6 cuadrado color-simon-amarillo" ng-click="click(3)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==3)}">
-      </div>
-      <div class="col-sm-6 cuadrado color-simon-verde" ng-click="click(4)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==4)}">
+      <div class="col-sm-12 caja-simon">
+        <div class="col-sm-6 cuadrado color-simon-amarillo" ng-click="click(3)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==3)}">
+        </div>
+        <div class="col-sm-6 cuadrado color-simon-verde" ng-click="click(4)" ng-class="{jugando: ('jugando' == estado), active: (ilumina==4)}">
+        </div>
       </div>
     </div>
   </div>

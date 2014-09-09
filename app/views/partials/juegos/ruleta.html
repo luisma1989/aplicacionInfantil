@@ -1,4 +1,35 @@
-<div class="row">
+<div id="navigation" class="col-lg-12">
+  <button class="col-lg-6 boton-ruleta-grande">Añadir</button>
+  <button class="col-lg-6 boton-ruleta-grande" id="next" data-increment="1">JUGAR!!!</button>
+</div>
+<div class="col-lg-12 ready">
+        <script src="scripts/scripts/funcionRuleta.js"></script>
+        <script src="scripts/scripts/configuracionRuleta.js"></script>
+
+{{hola}}
+
+
+<!-- Para visible o invisible class="panels-backface-invisible" en div id="carousel"-->
+
+
+<section class="container-ruleta">
+      <div id="carousel" class="panels-backface-invisible" style="transform: translateZ(-426px) rotateY(-55.38461538461539deg);">
+        <figure ng-repeat="e in casillas">
+          <img ng-src="{{e}}" class="imagen-carousel">
+        </figure>
+      </div>
+    </section>
+
+    <section id="options"style="display:none;">
+      <p>
+        <label for="panel-count">panels</label>
+        <input type="range" id="panel-count" value="4" min="3" max="20"
+
+    </section>
+
+</div>
+
+<!-- <div class="row">
   <div class="col-lg-12 ruleta">
     <carousel interval="myInterval">
       <slide ng-repeat="slide in slides" active="slide.active">
@@ -42,7 +73,7 @@
     </div>
   </div>
 
-</div>
+</div> -->
         
 
 
