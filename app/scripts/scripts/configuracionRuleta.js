@@ -61,7 +61,7 @@ var transformProp = Modernizr.prefixed('transform');
     carousel = new Carousel3D( document.getElementById('carousel') ),
         panelCountInput = document.getElementById('panel-count'),
         //axisButton = document.getElementById('toggle-axis'),
-        navButtons = document.querySelectorAll('#navigation button'),
+        navButtons = document.querySelectorAll('#botonRuleta','#imagenRuleta'),
 
         onNavButtonClick = function( event ){
 

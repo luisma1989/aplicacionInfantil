@@ -1,75 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin:700);
 
 .boton-ruleta-grande{
-	height: 100px;
+	height: 170px;
 	border: 3px solid white;
-}
-
-
-.ruleta{
+	margin-bottom: 50px;
 	background-color: white;
 	opacity: 0.7;
-	padding: 25px;
-	margin-bottom: 6%;
-	margin-top: 12%;
-	.prev{
-		margin-left: -20px;
-	}
-}
-  
-  
-.container-ruleta {
-	width: 227px;
-	height: 227px;
-	position: relative;
-	margin: 0 auto 40px;
-	border: 1px solid #CCC;
-	-webkit-perspective: 4000px;
-	   -moz-perspective: 4000px;
-	     -o-perspective: 4000px;
-	        perspective: 4000px;
-}
-.carousel-inner{
-	border: 2px solid red;
-	.left{
-		padding-left: -20px;
+	border: 2px solid white;
+	span{
+		font: 50px/51px "Oswald", sans-serif;
+	    color: #e15b32;
+	    text-align: center;
 	}
 }
 
-  pre {
-    background: #111;
-    color: white;
-    padding: 0.8em;
-    white-space: pre-wrap;
-  }
-
-
-  code .s1,
-  code .s { color: #78BD55; } /* string */
-  code .mi, /* integer */
-  code .cp { color: #5298D4; } /* doctype */
-  code .k { color: #E39B79; } /* keyword */
-  code .kd, /* storage */
-  code .na { color: #A9D866; } /* markup attribute */
-  code .p  { color: #EDB; } /* punctuation */
-  code .o  { color: #F63; }   /* operator */
-  code .nb { color: #AA97AC;} /* support */
-
-  /* comment */
-  code .c,
-  code .c1 { color: #666; font-style: italic; }
-
-  code .nt { color: #A0C8FC; } /* Markup open tag */
-
-  code .nf { color: #9EA8B8; } /* css id */
-  code .nc { color: #A78352; }  /* CSS class */
-  code .m  { color: #DE8E50; } /* CSS value */
-  code .nd { color: #9FAD7E; } /* CSS pseudo selector */
-  
-
-
 .container-ruleta {
-    width: 406px;
+    width: 402px;
     height: 437px;
     position: relative;
     margin: 0 auto 40px;
@@ -123,7 +69,9 @@
 }
 
 .imagen-carousel{
- 	border: 3px solid white;
+ 	//border: 3px solid white;
+ 	height: 437px;
+	width: 406px;
 }
 
 

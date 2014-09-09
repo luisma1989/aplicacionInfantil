@@ -1,79 +1,78 @@
-<div id="navigation" class="col-lg-12">
-  <button class="col-lg-6 boton-ruleta-grande">Añadir</button>
-  <button class="col-lg-6 boton-ruleta-grande" id="next" data-increment="1">JUGAR!!!</button>
+<div class="col-lg-12" ng-if="jugando">
+  <button class="col-lg-3 boton-ruleta-grande"><span>Añadir</span></button>
+  <button class="col-lg-6 boton-ruleta-grande" id="botonRuleta" data-increment="1"><span>JUGAR!!!</span></button>
+  <a class="col-lg-3 boton-ruleta-grande" href="/ruleta/?{{e}}"><span>Elegir otra</span></a>
 </div>
-<div class="col-lg-12 ready">
-        <script src="scripts/scripts/funcionRuleta.js"></script>
-        <script src="scripts/scripts/configuracionRuleta.js"></script>
+<h1 class="titulo-simon" ng-if="!jugando">JUEGA AL SIMON</h1>
+<ul class="ch-grid" ng-if="!jugando">
+    <li>
+      <a href="" ng-click="tipoRuleta('ruletaDibujos')">
+        <div class="ch-item">       
+          <div class="ch-info">
+            <div class="ch-info-front color-front-1">
+              <h3>Dibujos</h3>
+            </div>
+            <div class="ch-info-back color-back-1">
+              <p>Ruleta con dibujos infantiles</p>
+            </div>  
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" ng-click="tipoRuleta('ruletaAnimales')">
+        <div class="ch-item">       
+          <div class="ch-info">
+            <div class="ch-info-front color-front-2">
+              <h3>Animales</h3>
+            </div>
+            <div class="ch-info-back color-back-2">
+              <p>Ruleta con dibujos de animales</p>
+            </div>  
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" ng-click="tipoRuleta('ruletaNumeros')">
+        <div class="ch-item">
+          <div class="ch-info">
+            <div class="ch-info-front color-front-3">
+              <h3>Números</h3>
+            </div>
+            <div class="ch-info-back color-back-3">
+              <p>Ruleta con números</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+</ul>
 
-{{hola}}
 
-
-<!-- Para visible o invisible class="panels-backface-invisible" en div id="carousel"-->
-
-
-<section class="container-ruleta">
+<div class="col-lg-12 ready" ng-if="jugando">
+  <!-- Scripts del carousel -->
+  <script src="scripts/scripts/funcionRuleta.js"></script>
+  <script src="scripts/scripts/configuracionRuleta.js"></script>
+  
+  <!-- Para visible o invisible class="panels-backface-invisible" en div id="carousel"-->
+  <section class="container-ruleta">
       <div id="carousel" class="panels-backface-invisible" style="transform: translateZ(-426px) rotateY(-55.38461538461539deg);">
         <figure ng-repeat="e in casillas">
+          <a href="" id="imagenRuleta" data-increment="1">
           <img ng-src="{{e}}" class="imagen-carousel">
+          </a>
         </figure>
       </div>
-    </section>
-
-    <section id="options"style="display:none;">
-      <p>
-        <label for="panel-count">panels</label>
-        <input type="range" id="panel-count" value="4" min="3" max="20"
-
-    </section>
-
+  </section>
 </div>
 
-<!-- <div class="row">
-  <div class="col-lg-12 ruleta">
-    <carousel interval="myInterval">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        
-        <div class="carousel-caption">
-          <h4>Slide {{$index}}</h4>
-          <p>{{slide.text}}</p>
-        </div>
-      
-      </slide>
-    </carousel>
-  </div>
+<div class="col-lg-12 ready">
+  <h2 class="volver-simon">
+    <a href="/"><span class="icon-mail-reply"></span>Volver a la página incial!</a>
+  </h2>
 </div>
 
-<div class="row">
-  <div class="col-lg-6">
-    <div ng-click="open()" class="circle-container">
-      <div class="outer-ring"></div>
-      <div class="circle">
-        <div class="front">
-          <p>CONFIG</p>
-        </div>
-        <div class="back">
-          <p>CONFIG</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-6">
-    <div ng-click="pause()" class="circle-container">
-      <div class="outer-ring"></div>
-      <div class="circle">
-        <div class="front">
-          <p>Pulsa!</p>
-        </div>
-        <div class="back">
-          <p>Pulsa!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div> -->
-        
-
-
+<section id="options"style="display:none;">
+    <input type="range" id="panel-count" value="{{numeroInicial}}" min="3" max="20">
+</section>
