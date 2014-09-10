@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('aplicacionCompleta2App')
-  .controller('SimonCtrl', function ($scope) {
-  	var resultados = $scope.resultados = [];
+  .controller('SimonCtrl', function ($scope, localStorageService) {
+    $scope.resultados = localStorageService.get('resultados');
+
+    if($scope.resultados === null){
+      $scope.resultados = [];
+    }
 
     $scope.jugando = false;
 
@@ -14,10 +18,14 @@ angular.module('aplicacionCompleta2App')
     $scope.muestraResultado = function (resultado){
       $scope.jugando = false;
       $scope.resultado = resultado;
-      resultados.push(resultado);
-      resultados.sort(function (a, b){
+      $scope.resultados.push(resultado);
+      $scope.resultados.sort(function (a, b){
         return a.movimientos - b.movimientos;
       });
-      resultado.posicion = resultados.indexOf(resultado) + 1;
+      resultado.posicion = $scope.resultados.indexOf(resultado) + 1;
+    
+      localStorageService.add('resultados',$scope.resultados);
+
     };
+
   });
