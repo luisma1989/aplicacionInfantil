@@ -61,7 +61,7 @@ var transformProp = Modernizr.prefixed('transform');
     carousel = new Carousel3D( document.getElementById('carousel') ),
         panelCountInput = document.getElementById('panel-count'),
         //axisButton = document.getElementById('toggle-axis'),
-        navButtons = document.querySelectorAll('#botonRuleta','#imagenRuleta'),
+        navButtons = document.querySelectorAll('#botonRuleta'),
 
         onNavButtonClick = function( event ){
 
@@ -85,9 +85,9 @@ var transformProp = Modernizr.prefixed('transform');
       carousel.modify();
     }, false);
 
-    for (var i=0; i < 2; i++) {
+    /*for (var i=0; i < 2; i++) {
       navButtons[i].addEventListener( 'click', onNavButtonClick, false);
-    }
+    }*/
 
     // document.getElementById('toggle-backface-visibility').addEventListener( 'click', function(){
     //   carousel.element.toggleClassName('panels-backface-invisible');

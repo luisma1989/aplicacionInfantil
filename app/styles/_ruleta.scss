@@ -7,16 +7,24 @@
 	background-color: white;
 	opacity: 0.7;
 	border: 2px solid white;
+	vertical-align: middle;
+	&:hover{
+		text-decoration: none;
+	}
 	span{
 		font: 50px/51px "Oswald", sans-serif;
 	    color: #e15b32;
 	    text-align: center;
 	}
+	.principal{
+		font: 70px/51px "Oswald", sans-serif;
+		color: #428bca;
+	}
 }
 
 .container-ruleta {
     width: 402px;
-    height: 437px;
+    height: 402px;
     position: relative;
     margin: 0 auto 40px;
     -webkit-perspective: 4000px;
@@ -70,8 +78,8 @@
 
 .imagen-carousel{
  	//border: 3px solid white;
- 	height: 437px;
-	width: 406px;
+ 	height: 402px;
+	width: 402px;
 }
 
 
