@@ -80,10 +80,10 @@ var transformProp = Modernizr.prefixed('transform');
     //   carousel.modify();
     // }, false);
 
-    panelCountInput.addEventListener( 'change', function( event ) {
+    /*panelCountInput.addEventListener( 'change', function( event ) {
       carousel.panelCount = event.target.value;
       carousel.modify();
-    }, false);
+    }, false);*/
 
     /*for (var i=0; i < 2; i++) {
       navButtons[i].addEventListener( 'click', onNavButtonClick, false);

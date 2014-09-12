@@ -1,12 +1,11 @@
 <div class="col-lg-12" ng-if="jugando">
-  <button class="col-lg-3 boton-ruleta-grande"><span>Añadir</span></button>
-  <button class="col-lg-6 boton-ruleta-grande" id="botonRuleta" data-increment="1" ng-click="jugarRuleta()"><span class="principal">PULSA!!!</span></button>
+  <button class="col-lg-9 boton-ruleta-grande" id="botonRuleta" data-increment="1" ng-click="jugarRuleta()"><span class="principal">PULSA!!!</span></button>
   <a class="col-lg-3 boton-ruleta-grande" href="/ruleta/?{{e}}"><span>Elegir otra</span></a>
 </div>
 <h1 class="titulo-simon" ng-if="!jugando">JUEGA AL SIMON</h1>
 <ul class="ch-grid" ng-if="!jugando">
     <li>
-      <a href="" ng-click="tipoRuleta('ruletaDibujos', 6)">
+      <a href="" ng-click="tipoRuleta('ruletaDibujos',6)">
         <div class="ch-item">       
           <div class="ch-info">
             <div class="ch-info-front color-front-1">
@@ -47,7 +46,62 @@
         </div>
       </a>
     </li>
+    <li ng-hide="ruletasPersonalizadas.length > 8">
+      <a href="" ng-click="mostrarImagenes()">
+        <div class="ch-item">
+          <div class="ch-info">
+            <div class="ch-info-front color-front-3">
+              <h3>Crear ruleta</h3>
+            </div>
+            <div class="ch-info-back color-back-3">
+              <p>Crea tu propia ruleta con todas nuestras imagenes</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+    
+
+    <li ng-repeat="e in ruletasPersonalizadas">
+      <a href="" ng-click="crearRuleta(e, false)">
+        <div class="ch-item">
+          <div class="ch-info">
+            <div class="ch-info-front color-front-{$index+3}">
+              <h3>Ruleta {{$index+1}}</h3>
+            </div>
+            <div class="ch-info-back color-back-3">
+              <p>Ruleta persolalizada</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+
 </ul>
+
+  <button ng-click="borrarRuletasPersonalizadas()">borrar ruletas personalizadas</button>
+
+
+<div class="col-lg-12" ng-if="creandoRuleta">
+
+  <input ng-model="filtroImagenes" type="text">
+
+  <ul>
+    <li ng-click="estableceFiltroImagenes('')">Mostrar Todo</li>
+    <li ng-repeat="e in familias" ng-click="estableceFiltroImagenes(e)">{{e}}</li>
+  </ul>
+
+  <ul class="listado-imagenes">
+    <li ng-repeat="img in imagenes | filter:filtroImagenes">
+      <img ng-click="seleccionarImagen(img)" src="{{img.src}}" alt="imagen {{img}}" class="imagen-muestra" 
+        ng-class="{'activada': seleccionImagenes.indexOf(img) != -1}">
+    </li>
+  </ul>
+
+  <button ng-click="crearRuleta(seleccionImagenes, true)">crear</button>
+  <div ng-hide="errorRuleta === ''">{{errorRuleta}}</div>
+
+</div>
 
 
 <div class="col-lg-12 ready" ng-if="jugando">

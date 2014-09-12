@@ -1,9 +1,11 @@
 <div id="wrapper">
 
+        
+<button ng-click="empiezaTour()">Holas</button>
   <h1 ng-show="currentUser" class="nombreUsuario">{{currentUser.name}}</h1>
   
   <!-- Menu principal -->
-  <ul class="ch-grid" data-intro="holaa!!" data-step="1">
+  <ul class="ch-grid">
     <li ng-hide="currentUser" ng-class="{active: isActive('/login')}">
       <a href="/login">
         <div class="ch-item">       
@@ -126,7 +128,7 @@
 
     <article id="primeraPagina">
       <div class="contenido-seccion">
-      <header>
+      <header class="titulo-primera-seccion">
         <h1 ng-if="!currentUser"><a ng-click="open()">Primer juego</a></h1>        
         <h1 ng-if="currentUser"><a href="/ruleta">Primer juego</a></h1>
         <h5>El juego de la Ruleta</h5>
@@ -253,93 +255,5 @@
   </div>
 
   <script type="text/javascript">
-    $(document).ready(function() {
-      redrawDotNav();
-
-        $(window).bind('scroll',function(e){
-          parallaxScroll();
-          redrawDotNav();
-        });
-
-      $('a.primeraSeccion').click(function(){
-          $('html, body').animate({
-            scrollTop:0
-          }, 1000, function() {
-            parallaxScroll(); 
-        });
-          return false;
-      });
-
-      $('a.segundaSeccion').click(function(){
-        $('html, body').animate({
-          scrollTop:$('#segundaSeccion').offset().top
-        }, 1000, function() {
-          parallaxScroll();
-      });
-        return false;
-      });
-
-      $('a.terceraSeccion').click(function(){
-        $('html, body').animate({
-          scrollTop:$('#terceraSeccion').offset().top
-        }, 1000, function() {
-          parallaxScroll();
-      });
-        return false;
-      });
-
-      $('a.cuartaSeccion').click(function(){
-        $('html, body').animate({
-          scrollTop:$('#cuartaSeccion').offset().top
-        }, 1000, function() {
-          parallaxScroll();
-      });
-        return false;
-      });
-
-      $('a.quintaSeccion').click(function(){
-        $('html, body').animate({
-          scrollTop:$('#quintaSeccion').offset().top
-        }, 1000, function() {
-          parallaxScroll();
-      });
-        return false;
-      });
-
-        $('nav#primary a').hover(
-          function () {
-          $(this).prev('h1').show();
-        },
-        function () {
-          $(this).prev('h1').hide();
-        }
-        );
-    });
-
-    function parallaxScroll(){
-      var scrolled = $(window).scrollTop();
-      $('#parallax-bg1').css('top',(0-(scrolled*.30))+'px');
-      $('#parallax-bg2').css('top',(0-(scrolled*.10))+'px');
-    }
-
-    function redrawDotNav(){
-      var section1Top =  0;
-      var section2Top =  $('#segundaSeccion').offset().top - (($('#terceraSeccion').offset().top - $('#segundaSeccion').offset().top) / 2);
-      var section3Top =  $('#terceraSeccion').offset().top - (($('#cuartaSeccion').offset().top - $('#terceraSeccion').offset().top) / 2);
-      var section4Top =  $('#cuartaSeccion').offset().top - (($(document).height() - $('#cuartaSeccion').offset().top) / 2);
-      var section5Top =  $('#quintaSeccion').offset().top - (($(document).height() - $('#quintaSeccion').offset().top) / 2);
-      $('nav#primary a').removeClass('active');
-      if($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top){
-        $('nav#primary a.inicioPagina').addClass('active');
-      } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top){
-        $('nav#primary a.segundaSeccion').addClass('active');
-      } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top){
-        $('nav#primary a.terceraSeccion').addClass('active');
-      } else if ($(document).scrollTop() >= section4Top){
-        $('nav#primary a.cuartaSeccion').addClass('active');
-      } else if ($(document).scrollTop() >= section5Top){
-        $('nav#primary a.quintaSeccion').addClass('active');
-      }
-
-    }
+    
   </script>

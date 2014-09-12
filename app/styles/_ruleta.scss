@@ -23,14 +23,32 @@
 }
 
 .container-ruleta {
-    width: 402px;
-    height: 402px;
+    width: 400px;
+    height: 400px;
     position: relative;
     margin: 0 auto 40px;
     -webkit-perspective: 4000px;
        -moz-perspective: 4000px;
          -o-perspective: 4000px;
             perspective: 4000px;
+}
+
+.listado-imagenes{
+	border: 2px solid white;
+	li{
+		list-style: none;
+		display: inline-block;
+		padding: 10px;
+	}
+	.imagen-muestra{
+		height: 184px;
+		width: 184px;
+	}
+	.activada{
+		background-color: black;
+		display: block;		
+		opacity: 0.4;
+	}
 }
 
 #carousel {
@@ -77,9 +95,8 @@
 }
 
 .imagen-carousel{
- 	//border: 3px solid white;
- 	height: 402px;
-	width: 402px;
+ 	height: 400px;
+	width: 400px;
 }
 
 
