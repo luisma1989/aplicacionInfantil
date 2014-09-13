@@ -5,16 +5,29 @@
   -moz-osx-font-smoothing: grayscale; 
 }
 
-.nombreUsuario {
-  font: 100 4em/1em Lato;
+.etiquetas-laterales{
   margin: 0;
   text-transform: uppercase;
   position: fixed;
+  background-color: white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.nombreUsuario {
+  padding: 20px 50px;
+  font: 100 4em/1em Lato;
   top: 80%;
   right: 0;
-  background-color: white;
-  padding: 20px 50px;
-  opacity: 0.5;
+  a:hover{
+    text-decoration: none;
+  }
+}
+.guia{
+  top: 0;
+  left: 0;
+  font: 100 2em/1em Lato;
+  padding: 15px 30px;
+
 }
 
 .contacta{

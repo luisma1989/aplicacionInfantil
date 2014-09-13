@@ -1,9 +1,8 @@
 <div class="row pagina-registro">
-
   <div class="col-sm-6 contenedor">
     <h1>Accece <span>con tu usuario</span></h1>
     <div class="ch-grid">
-      <li ng-hide="currentUser" ng-class="{active: isActive('/signup')}">
+      <li ng-hide="currentUser" id="primerItemLogin" ng-class="{active: isActive('/signup')}">
         <a href="/signup">
           <div class="ch-item">       
             <div class="ch-info">
@@ -19,12 +18,12 @@
       </li>
     </div>
 
-    <h2><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
+    <h2 id="volverLogin"><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
 
   </div>
 
   <div class="col-sm-6 contenedor">
-    <form class="form contacta" name="form" ng-submit="login(form)" >
+    <form class="form contacta" id="formularioLogin" name="form" ng-submit="login(form)" >
       <div class="form-group">
         <label>Email</label>
         <input type="email" name="email" class="form-control" ng-model="user.email">

@@ -1,10 +1,8 @@
-
 <div class="row pagina-registro">
-
   <div class="col-sm-6 contenedor">
     <h1>Registrate <span>en nuestra aplicacion</span></h1>
     <div class="ch-grid">
-      <li>
+      <li id="primerItemRegistro">
         <a href="/login">
           <div class="ch-item">       
             <div class="ch-info">
@@ -20,12 +18,12 @@
       </li>
     </div>
 
-    <h2><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
+    <h2 id="volverRegistro"><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
   </div>
 
   <div class="col-sm-6 contenedor">
 
-    <form class="form contacta" name="form" ng-submit="register(form)" novalidate>
+    <form class="form contacta" id="formularioRegistro" name="form" ng-submit="register(form)" novalidate>
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                           'has-error': form.name.$invalid && submitted }">
         <label>Name</label>

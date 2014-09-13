@@ -4,98 +4,94 @@
 </div>
 <h1 class="titulo-simon" ng-if="!jugando">JUEGA AL SIMON</h1>
 <ul class="ch-grid" ng-if="!jugando">
-    <li>
-      <a href="" ng-click="tipoRuleta('ruletaDibujos',6)">
-        <div class="ch-item">       
-          <div class="ch-info">
-            <div class="ch-info-front color-front-1">
-              <h3>Dibujos</h3>
-            </div>
-            <div class="ch-info-back color-back-1">
-              <p>Ruleta con dibujos infantiles</p>
-            </div>  
-          </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="" ng-click="tipoRuleta('ruletaAnimales', 6)">
-        <div class="ch-item">       
-          <div class="ch-info">
-            <div class="ch-info-front color-front-2">
-              <h3>Animales</h3>
-            </div>
-            <div class="ch-info-back color-back-2">
-              <p>Ruleta con dibujos de animales</p>
-            </div>  
-          </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="" ng-click="tipoRuleta('ruletaNumeros', 9)">
-        <div class="ch-item">
-          <div class="ch-info">
-            <div class="ch-info-front color-front-3">
-              <h3>Números</h3>
-            </div>
-            <div class="ch-info-back color-back-3">
-              <p>Ruleta con números</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </li>
-    <li ng-hide="ruletasPersonalizadas.length > 8">
-      <a href="" ng-click="mostrarImagenes()">
-        <div class="ch-item">
-          <div class="ch-info">
-            <div class="ch-info-front color-front-3">
-              <h3>Crear ruleta</h3>
-            </div>
-            <div class="ch-info-back color-back-3">
-              <p>Crea tu propia ruleta con todas nuestras imagenes</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </li>
-    
+	<li>
+	  <a href="" ng-click="tipoRuleta('ruletaDibujos',6)">
+		<div class="ch-item">
+		  <div class="ch-info">
+			<div class="ch-info-front color-front-1">
+			  <h3>Dibujos</h3>
+			</div>
+			<div class="ch-info-back color-back-1">
+			  <p>Ruleta con dibujos infantiles</p>
+			</div>
+		  </div>
+		</div>
+	  </a>
+	</li>
+	<li>
+	  <a href="" ng-click="tipoRuleta('ruletaAnimales', 6)">
+		<div class="ch-item">
+		  <div class="ch-info">
+			<div class="ch-info-front color-front-2">
+			  <h3>Animales</h3>
+			</div>
+			<div class="ch-info-back color-back-2">
+			  <p>Ruleta con dibujos de animales</p>
+			</div>
+		  </div>
+		</div>
+	  </a>
+	</li>
+	<li>
+	  <a href="" ng-click="tipoRuleta('ruletaNumeros', 9)">
+		<div class="ch-item">
+		  <div class="ch-info">
+			<div class="ch-info-front color-front-3">
+			  <h3>Números</h3>
+			</div>
+			<div class="ch-info-back color-back-3">
+			  <p>Ruleta con números</p>
+			</div>
+		  </div>
+		</div>
+	  </a>
+	</li>
+	<li ng-hide="ruletasPersonalizadas.length > 8">
+	  <a href="" ng-click="mostrarImagenes()">
+		<div class="ch-item">
+		  <div class="ch-info">
+			<div class="ch-info-front color-front-3">
+			  <h3>Crear ruleta</h3>
+			</div>
+			<div class="ch-info-back color-back-3">
+			  <p>Crea tu propia ruleta con todas nuestras imagenes</p>
+			</div>
+		  </div>
+		</div>
+	  </a>
+	</li>
 
-    <li ng-repeat="e in ruletasPersonalizadas">
-      <a href="" ng-click="crearRuleta(e, false)">
-        <div class="ch-item">
-          <div class="ch-info">
-            <div class="ch-info-front color-front-{$index+3}">
-              <h3>Ruleta {{$index+1}}</h3>
-            </div>
-            <div class="ch-info-back color-back-3">
-              <p>Ruleta persolalizada</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </li>
-
+	<li ng-repeat="e in ruletasPersonalizadas">
+	  <a href="" ng-click="crearRuleta(e, false)">
+		<div class="ch-item">
+		  <div class="ch-info">
+			<div class="ch-info-front color-front-{$index+3}">
+			  <h3>Ruleta {{$index+1}}</h3>
+			</div>
+			<div class="ch-info-back color-back-3">
+			  <p>Ruleta persolalizada</p>
+			</div>
+		  </div>
+		</div>
+	  </a>
+	</li>
 </ul>
 
-  <button ng-click="borrarRuletasPersonalizadas()">borrar ruletas personalizadas</button>
-
-
 <div class="col-lg-12" ng-if="creandoRuleta">
+	<button ng-click="borrarRuletasPersonalizadas()">borrar ruletas personalizadas</button>
 
   <input ng-model="filtroImagenes" type="text">
 
   <ul>
-    <li ng-click="estableceFiltroImagenes('')">Mostrar Todo</li>
-    <li ng-repeat="e in familias" ng-click="estableceFiltroImagenes(e)">{{e}}</li>
+	<li ng-click="estableceFiltroImagenes('')">Mostrar Todo</li>
+	<li ng-repeat="e in familias" ng-click="estableceFiltroImagenes(e)">{{e}}</li>
   </ul>
 
   <ul class="listado-imagenes">
-    <li ng-repeat="img in imagenes | filter:filtroImagenes">
-      <img ng-click="seleccionarImagen(img)" src="{{img.src}}" alt="imagen {{img}}" class="imagen-muestra" 
-        ng-class="{'activada': seleccionImagenes.indexOf(img) != -1}">
-    </li>
+	<li ng-repeat="img in imagenes | filter:filtroImagenes">
+	  <img ng-click="seleccionarImagen(img)" src="{{img.src}}" alt="imagen {{img}}" class="imagen-muestra"
+		ng-class="{'activada': seleccionImagenes.indexOf(img) != -1}">
+	</li>
   </ul>
 
   <button ng-click="crearRuleta(seleccionImagenes, true)">crear</button>
@@ -111,22 +107,22 @@
   
   <!-- Para visible o invisible class="panels-backface-invisible" en div id="carousel"-->
   <section class="container-ruleta">
-      <div id="carousel" class="panels-backface-invisible" style="transform: translateZ(-426px) rotateY(-55.38461538461539deg);">
-        <figure ng-repeat="e in casillas">
-          <a href="" id="imagenRuleta" data-increment="1">
-          <img ng-src="{{e}}" class="imagen-carousel">
-          </a>
-        </figure>
-      </div>
+	  <div id="carousel" class="panels-backface-invisible" style="transform: translateZ(-426px) rotateY(-55.38461538461539deg);">
+		<figure ng-repeat="e in casillas">
+		  <a href="" id="imagenRuleta" data-increment="1">
+		  <img ng-src="{{e}}" class="imagen-carousel">
+		  </a>
+		</figure>
+	  </div>
   </section>
 </div>
 
 <div class="col-lg-12 ready">
   <h2 class="volver-simon">
-    <a href="/"><span class="icon-mail-reply"></span>Volver a la página incial!</a>
+	<a href="/"><span class="icon-mail-reply"></span>Volver a la página incial!</a>
   </h2>
 </div>
 
 <section id="options"style="display:none;">
-    <input type="range" id="panel-count" value="{{numeroInicial}}" min="3" max="20">
+	<input type="range" id="panel-count" value="{{numeroInicial}}" min="3" max="20">
 </section>

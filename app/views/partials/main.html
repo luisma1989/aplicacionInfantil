@@ -1,12 +1,12 @@
 <div id="wrapper">
-
         
-<button ng-click="empiezaTour()">Holas</button>
-  <h1 ng-show="currentUser" class="nombreUsuario">{{currentUser.name}}</h1>
+  <h1 class="etiquetas-laterales guia" ng-click="empiezaTour()">Guía</h1>
+
+  <h1 ng-show="currentUser" class="nombreUsuario etiquetas-laterales"><a href="/usuario">{{currentUser.name}}</a></h1>
   
   <!-- Menu principal -->
   <ul class="ch-grid">
-    <li ng-hide="currentUser" ng-class="{active: isActive('/login')}">
+    <li ng-hide="currentUser" id="primerItem" ng-class="{active: isActive('/login')}">
       <a href="/login">
         <div class="ch-item">       
           <div class="ch-info">
@@ -20,7 +20,7 @@
         </div>
       </a>
     </li>
-    <li ng-hide="currentUser" ng-class="{active: isActive('/signup')}">
+    <li ng-hide="currentUser" id="segundoItem" ng-class="{active: isActive('/signup')}">
       <a href="/signup">
         <div class="ch-item">       
           <div class="ch-info">
@@ -34,7 +34,7 @@
         </div>
       </a>
     </li>
-    <li ng-show="currentUser" ng-class="{active: isActive('/usuario')}">
+    <li ng-show="currentUser" id="tercerItem" ng-class="{active: isActive('/usuario')}">
       <a href="/usuario">
         <div class="ch-item">
           <div class="ch-info">
@@ -48,8 +48,8 @@
         </div>
       </a>
     </li>
-    <li>
-      <a class="cuartaSeccion" href="#cuartaSeccion">
+    <li id="cuartoItem">
+      <a class="cuartaSeccion"  href="#cuartaSeccion">
         <div class="ch-item">
           <div class="ch-info">
               <div class="ch-info-front color-front-3">
@@ -63,7 +63,7 @@
         </a>
     </li>
     
-    <li class="quintaSeccion">
+    <li class="quintaSeccion" id="quintoItem">
       <a class="quintaSeccion" href="#quintaSeccion">
         <div class="ch-item">
           <div class="ch-info">
@@ -78,7 +78,7 @@
       </a>
     </li>
 
-    <li ng-show="currentUser" ng-class="{active: isActive('/logout')}">
+    <li ng-show="currentUser" id="sextoItem" ng-class="{active: isActive('/logout')}">
       <a href="" ng-click="logout()">
         <div class="ch-item">
           <div class="ch-info">
@@ -255,5 +255,93 @@
   </div>
 
   <script type="text/javascript">
-    
+    $(document).ready(function() {
+      redrawDotNav();
+
+      $(window).bind('scroll',function(e){
+        parallaxScroll();
+        redrawDotNav();
+      });
+
+      $('a.primeraSeccion').click(function(){
+        $('html, body').animate({
+          scrollTop:0
+          }, 1000, function() {
+            parallaxScroll();
+        });
+        return false;
+      });
+
+      $('a.segundaSeccion').click(function(){
+          $('html, body').animate({
+            scrollTop:$('#segundaSeccion').offset().top
+            }, 1000, function() {
+              parallaxScroll();
+          });
+          return false;
+      });
+
+      $('a.terceraSeccion').click(function(){
+          $('html, body').animate({
+            scrollTop:$('#terceraSeccion').offset().top
+            }, 1000, function() {
+              parallaxScroll();
+          });
+          return false;
+      });
+
+      $('a.cuartaSeccion').click(function(){
+          $('html, body').animate({
+            scrollTop:$('#cuartaSeccion').offset().top
+            }, 1000, function() {
+            parallaxScroll();
+          });
+          return false;
+      });
+
+      $('a.quintaSeccion').click(function(){
+        $('html, body').animate({
+          scrollTop:$('#quintaSeccion').offset().top
+          }, 1000, function() {
+            parallaxScroll();
+        });
+          return false;
+      });
+
+      $('nav#primary a').hover(
+        function () {
+          $(this).prev('h1').show();
+        },
+        function () {
+          $(this).prev('h1').hide();
+        }
+      );
+    });
+
+    function parallaxScroll(){
+      var scrolled = $(window).scrollTop();
+      $('#parallax-bg1').css('top',(0-(scrolled*.30))+'px');
+      $('#parallax-bg2').css('top',(0-(scrolled*.10))+'px');
+    }
+
+    function redrawDotNav(){
+      var section1Top =  0;
+      var section2Top =  $('#segundaSeccion').offset().top - (($('#terceraSeccion').offset().top - $('#segundaSeccion').offset().top) / 2);
+      var section3Top =  $('#terceraSeccion').offset().top - (($('#cuartaSeccion').offset().top - $('#terceraSeccion').offset().top) / 2);
+      var section4Top =  $('#cuartaSeccion').offset().top - (($(document).height() - $('#cuartaSeccion').offset().top) / 2);
+      var section5Top =  $('#quintaSeccion').offset().top - (($(document).height() - $('#quintaSeccion').offset().top) / 2);
+      $('nav#primary a').removeClass('active');
+      if($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top){
+        $('nav#primary a.inicioPagina').addClass('active');
+      } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top){
+        $('nav#primary a.segundaSeccion').addClass('active');
+      } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top){
+        $('nav#primary a.terceraSeccion').addClass('active');
+      } else if ($(document).scrollTop() >= section4Top){
+        $('nav#primary a.cuartaSeccion').addClass('active');
+      } else if ($(document).scrollTop() >= section5Top){
+        $('nav#primary a.quintaSeccion').addClass('active');
+      }
+    }
+
   </script>
