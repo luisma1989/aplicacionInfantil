@@ -99,7 +99,7 @@ angular.module('aplicacionCompleta2App')
 			$scope.personalizando = true;
 
 			if(imagenes.length < 3){
-				$scope.errorRuleta = 'debe seleccionar 3 o más imagenes';
+				$scope.errorRuleta = 'Debe seleccionar 3 o más imagenes';
 				return;
 			}
 

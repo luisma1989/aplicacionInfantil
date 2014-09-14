@@ -1,6 +1,25 @@
 <div class="col-lg-12" ng-if="jugando">
   <button class="col-lg-9 boton-ruleta-grande" id="botonRuleta" data-increment="1" ng-click="jugarRuleta()"><span class="principal">PULSA!!!</span></button>
-  <a class="col-lg-3 boton-ruleta-grande" href="/ruleta/?{{e}}"><span>Elegir otra</span></a>
+
+  <div class="col-lg-3">
+
+		<ul class="ch-grid">
+		 <li>
+			  <a href="/ruleta/?{{e}}">
+				<div class="ch-item">
+				  <div class="ch-info">
+					<div class="ch-info-front color-front-5">
+					  <h3>Elegir otra</h3>
+					</div>
+					<div class="ch-info-back color-back-5">
+					  <p>Vuelve atrás para elegir ptra ruleta</p>
+					</div>
+				  </div>
+				</div>
+			  </a>
+			</li>
+		</ul>
+	</div>
 </div>
 <h1 class="titulo-simon" ng-if="!jugando" ng-show="!creandoRuleta">Las Ruletas</h1>
 
@@ -82,28 +101,30 @@
 	</li>
 </ul>
 
-<div class="col-lg-12" ng-if="creandoRuleta" >
-
-	<accordion close-others="oneAtATime" class="col-lg-9">
-    <accordion-group is-open="status.open">
-      <accordion-heading>
-        Elige el tipo de imágenes
-        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-      </accordion-heading>
-			<ul style="margin-left: -40px;">
-				<li class="listado-tipos-imagenes col-lg-2" ng-repeat="e in familias" ng-click="estableceFiltroImagenes(e)">{{e}}</li>
-				<li class="listado-tipos-imagenes titulo-destacado-imagenes col-lg-2" ng-click="estableceFiltroImagenes('')">Mostrar todas</li>
-			</ul>
-		</accordion-group>
-  </accordion>
-	<div class="col-lg-3">
-		<label>Nombre</label>
-		<input ng-model="filtroImagenes" type="text" class=" filtro-imagenes">
+<div class="col-lg-12" ng-if="creandoRuleta">
+	<h1 class="etiquetas-laterales guia"><a href="/ruleta/?{{e}}">Atrás</a></h1>
+	<div class="col-lg-12 eleccion-imagenes">
+		<accordion close-others="oneAtATime" class="col-lg-9">
+	    <accordion-group is-open="status.open">
+	      <accordion-heading>
+	        Elige el tipo de imágenes
+	        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+	      </accordion-heading>
+				<ul style="margin-left: -40px;">
+					<li class="listado-tipos-imagenes col-lg-2" ng-repeat="e in familias" ng-click="estableceFiltroImagenes(e)">{{e}}</li>
+					<li class="listado-tipos-imagenes titulo-destacado-imagenes col-lg-2" ng-click="estableceFiltroImagenes('')">Mostrar todas</li>
+				</ul>
+			</accordion-group>
+	  </accordion>
+		<div class="col-lg-3">
+			<label>Buscar</label>
+			<input ng-model="filtroImagenes" type="text" class=" filtro-imagenes">
+		</div>
 	</div>
+
+	<div ng-hide="errorRuleta === ''" class="listado-tipos-imagenes">{{errorRuleta}}</div>
 			
-	<div ng-hide="errorRuleta === ''">{{errorRuleta}}</div>
-			
-	<ul class="col-lg-12 listado-imagenes">
+	<ul class="col-lg-12 listado-imagenes no-margin">
 		<li ng-repeat="img in imagenes | filter:filtroImagenes" class="col-lg-2">
 		    <img ng-click="seleccionarImagen(img)" src="{{img.src}}" alt="imagen {{img}}" class="imagen-muestra"
 			ng-class="{'activada': seleccionImagenes.indexOf(img) != -1}">
@@ -135,7 +156,7 @@
   </section>
 </div>
 
-<div class="col-lg-12 ready">
+<div class="col-lg-12 ready" ng-show="!creandoRuleta">
   <h2 class="volver-simon">
 	<a href="/"><span class="icon-mail-reply"></span>Volver a la página incial!</a>
   </h2>

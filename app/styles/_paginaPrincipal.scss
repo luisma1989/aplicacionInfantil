@@ -25,9 +25,11 @@
 .guia{
   top: 0;
   left: 0;
-  font: 100 2em/1em Lato;
+  font: 300 2em/1em Lato;
   padding: 15px 30px;
-
+  a{
+    text-decoration: none;
+  }
 }
 
 .contacta{
@@ -40,4 +42,9 @@
     border-radius: 0;
     background-color: #21a97e;
   }
+}
+
+.no-margin{
+  margin-left: -20px !important;
+  padding-left: -20px !important; 
 }
