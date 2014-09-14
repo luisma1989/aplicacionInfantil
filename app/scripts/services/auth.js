@@ -3,19 +3,12 @@
 angular.module('aplicacionCompleta2App')
   .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
     
-    // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
     $cookieStore.remove('user');
 
     return {
 
-      /**
-       * Authenticate user
-       * 
-       * @param  {Object}   user     - login info
-       * @param  {Function} callback - optional
-       * @return {Promise}            
-       */
+      // Autentificación de los usuarios
       login: function(user, callback) {
         var cb = callback || angular.noop;
 
@@ -30,12 +23,7 @@ angular.module('aplicacionCompleta2App')
         }).$promise;
       },
 
-      /**
-       * Unauthenticate user
-       * 
-       * @param  {Function} callback - optional
-       * @return {Promise}           
-       */
+      // Logout del usuario 
       logout: function(callback) {
         var cb = callback || angular.noop;
 
@@ -48,13 +36,7 @@ angular.module('aplicacionCompleta2App')
           }).$promise;
       },
 
-      /**
-       * Create a new user
-       * 
-       * @param  {Object}   user     - user info
-       * @param  {Function} callback - optional
-       * @return {Promise}            
-       */
+      // Crear un nuevo usuario
       createUser: function(user, callback) {
         var cb = callback || angular.noop;
 
@@ -68,14 +50,7 @@ angular.module('aplicacionCompleta2App')
           }).$promise;
       },
 
-      /**
-       * Change password
-       * 
-       * @param  {String}   oldPassword 
-       * @param  {String}   newPassword 
-       * @param  {Function} callback    - optional
-       * @return {Promise}              
-       */
+      // Cambiar la contraseña
       changePassword: function(oldPassword, newPassword, callback) {
         var cb = callback || angular.noop;
 
@@ -89,22 +64,12 @@ angular.module('aplicacionCompleta2App')
         }).$promise;
       },
 
-      
-
-      /**
-       * Gets all available info on authenticated user
-       * 
-       * @return {Object} user
-       */
+      // Información del usuario
       currentUser: function() {
         return User.get();
       },
 
-      /**
-       * Simple check to see if a user is logged in
-       * 
-       * @return {Boolean}
-       */
+      // ¿Esta logueado?
       isLoggedIn: function() {
         var user = $rootScope.currentUser;
         return !!user;

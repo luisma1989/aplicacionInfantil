@@ -1,6 +1,6 @@
 <div id="wrapper">
         
-  <h1 class="etiquetas-laterales guia" ng-click="empiezaTour()">Guía</h1>
+  <h1 ng-show="!currentUser" class="etiquetas-laterales guia" ng-click="empiezaTour()">Guía</h1>
 
   <h1 ng-show="currentUser" class="nombreUsuario etiquetas-laterales"><a href="/usuario">{{currentUser.name}}</a></h1>
   

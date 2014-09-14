@@ -14,7 +14,7 @@ angular.module('aplicacionCompleta2App')
 		$scope.creandoRuleta = false;
 		$scope.imagenActivada = false;
 		$scope.errorRuleta = '';
-
+		$scope.personalizando = false;
 
 		$scope.tipoRuleta = function(nombre, numeroCasillas) {
 			$scope.creandoRuleta = false;
@@ -44,7 +44,16 @@ angular.module('aplicacionCompleta2App')
 		};
 
 		$scope.familias = [ 'animales',
-							'numeros'
+							'numeros',
+							'letras',
+							'colores',
+							'objetos',
+							'deportes',
+							'idiomas',
+							'vehiculos',
+							'plantas',
+							'acciones',
+							'otras'
 							];
 
 		$scope.estableceFiltroImagenes = function (filtro) {
@@ -73,7 +82,6 @@ angular.module('aplicacionCompleta2App')
 
 		$scope.seleccionarImagen = function (img) {
 
-
 			if($scope.seleccionImagenes.length > 20){
 				return;
 			}
@@ -87,6 +95,8 @@ angular.module('aplicacionCompleta2App')
 		};
 
 		$scope.crearRuleta = function (imagenes, guardar) {
+			
+			$scope.personalizando = true;
 
 			if(imagenes.length < 3){
 				$scope.errorRuleta = 'debe seleccionar 3 o más imagenes';
@@ -94,9 +104,7 @@ angular.module('aplicacionCompleta2App')
 			}
 
 			$scope.errorRuleta = '';
-
 			$scope.creandoRuleta = false;
-
 			$scope.casillas = [];
 			$scope.jugando = true;
 			for(var i=0; i<imagenes.length; i++){
@@ -117,6 +125,5 @@ angular.module('aplicacionCompleta2App')
 			localStorageService.add('ruletas', []);
 			$scope.ruletasPersonalizadas = [];
 		};
-
 
 	}]);

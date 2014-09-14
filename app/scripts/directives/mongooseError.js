@@ -1,10 +1,6 @@
 'use strict';
 
 angular.module('aplicacionCompleta2App')
-
-  /**
-   * Removes server error when user updates input
-   */
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

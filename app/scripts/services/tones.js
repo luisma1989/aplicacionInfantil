@@ -7,19 +7,19 @@ angular.module('aplicacionCompleta2App')
     function getFrequency(tone){
       switch(tone){
         case 1:
-          return 329.628; //E: green
+          return 329.628; // Verde
         case 2:
-          return 440; //red A
+          return 440; // Rojo
         case 3:
-          return 659.255; //E: blue
+          return 659.255; // Azul
         case 4:
-          return 554.365;//yellow c#, 277.183-554.365
+          return 554.365;// Amarillo
       }
     }
     this.play = function (tone, time) {
       var oscillator = context.createOscillator();
-      oscillator.connect(context.destination); // Connect to speakers
-      oscillator.type = 3; //3 - Triangle wave
+      oscillator.connect(context.destination);
+      oscillator.type = 3;
       oscillator.frequency.value = getFrequency(tone);
       oscillator.noteOn(0);// Start generating sound
       $timeout(function (){
