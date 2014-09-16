@@ -166,11 +166,11 @@
     <article id="terceraSeccion">
       <div class="contenido-seccion">
       <header>
-        <h1><a href="https://bitbucket.org/" target="_blank">Para crear juegos</a></h1>
+        <h1><a href="https://bitbucket.org/luisma_1989/aplicacioncompleta" target="_blank">Para crear juegos</a></h1>
         <h5>Si quieres colaborar...</h5>
       </header>
       <p>Este enlace lleva al repositorio donde se encuentra todo el código de esta aplicación. Para crear un juego solo tienes que bajarte el código y añadir todo el desarrollo que hayas creado.</p>
-      <p>Para todo esto deberás ser usuario de <a href="https://bitbucket.org/" target="_blank">Bitbukect.</a></p>
+      <p>Para todo esto deberás ser usuario de <a href="https://bitbucket.org/luisma_1989/aplicacioncompleta" target="_blank">Bitbukect.</a></p>
       <nav class="next-prev">
         <a class="icon-arrow-circle-up segundaSeccion" href=""></a>
         <hr>
@@ -209,7 +209,7 @@
 
         <div class="form-group">
           <label>Nombre</label>
-          <input type="text" name="nombre" class="form-control" required/>
+          <input type="text" name="nombre" class="form-control" ng-model="titulo" required/>
         </div>
 
         <div class="form-group">
@@ -219,10 +219,10 @@
 
         <div class="form-group">
           <label for="name">Comentario</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3" ng-model="cuerpo"></textarea>
         </div>
 
-        <button class="btn btn-lg btn-primary" type="submit">Enviar</button>
+        <a class="btn btn-lg btn-primary" type="submit" href="mailto:luisma_1989@hotmail.com?body={{cuerpo}}&subject={{titulo}}">Enviar</a>
       </form>
 
       <nav class="next-prev">

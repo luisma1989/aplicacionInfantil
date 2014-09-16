@@ -4,11 +4,12 @@
       <h1>Nombre: <span>{{ currentUser.name }}</span></h1>
       <h1>Apellidos: <span>{{ currentUser.apellidos }}</span></h1>
       <h1>Edad: <span>{{ currentUser.edad }}</span></h1>
+      <h1>Email: <span>{{ currentUser.email }}</span></h1>
     </div>
     <h2><a href="/"><span class="icon-mail-reply"></span>Volver</a></h2>
   </div>
   
-  <div class="col-sm-6 contenedor">
+  <!-- <div class="col-sm-6 contenedor">
     <h1>Aquí puedes modificar tus datos</h1>
     <accordion close-others="oneAtATime">
       <accordion-group is-open="status.open">
@@ -20,7 +21,7 @@
           <div class="form-group">
             <label>Actual contraseña</label>
 
-            <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
+            <input type="password" name="password" class="form-control" ng-model="User.oldPassword"
                    mongoose-error/>
             <p class="help-block" ng-show="form.password.$error.mongoose">
                 {{ errors.other }}
@@ -28,7 +29,7 @@
           </div>
           <div class="form-group">
             <label>Nueva contraseña</label>
-            <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
+            <input type="password" name="newPassword" class="form-control" ng-model="User.newPassword"
                    ng-minlength="3"
                    required/>
             <p class="help-block"
@@ -41,5 +42,5 @@
         </form>
       </accordion-group>
     </accordion>
-  </div>
+  </div> -->
 </div>
