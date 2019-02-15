@@ -2,7 +2,7 @@
   "name": "aplicacioncompleta",
   "version": "0.0.0",
   "dependencies": {
-    "express": "~3.4.3",
+    "express": ">=3.11.0",
     "lodash": "4.4.1",
     "mongoose": "~3.8.8",
     "connect-mongo": "~0.4.0",
